@@ -1,0 +1,9 @@
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.exe.config
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.exe
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.pdb
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.Form1.resources
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.Properties.Resources.resources
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.csproj.GenerateResource.Cache
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.exe
+C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.pdb
