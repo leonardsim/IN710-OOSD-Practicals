@@ -7,3 +7,12 @@ C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\o
 C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.csproj.GenerateResource.Cache
 C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.exe
 C:\Users\Asus\Desktop\ \BIT YEAR 3\OOSD\Practical\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.pdb
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.exe.config
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.exe
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.pdb
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.exe
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\bin\Debug\TwoToOne.pdb
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.csprojResolveAssemblyReference.cache
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.Form1.resources
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.Properties.Resources.resources
+H:\My Documents\GitHub\IN710-simle1-OOSD-Practicals\Session 1\TwoToOne\TwoToOne\obj\Debug\TwoToOne.csproj.GenerateResource.Cache

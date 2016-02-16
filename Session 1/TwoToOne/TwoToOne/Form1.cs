@@ -31,14 +31,7 @@ namespace TwoToOne
         for (int r = 0; r < rowCount; r++)
         {
             //Add code here. DO NOT declare any new variables
-            if (r == 0)
-            {
-                oneDimensional[c * rowCount] = twoDimensional[c, r];
-            }
-            else
-            {
-                oneDimensional[c * rowCount + r] = twoDimensional[c, r];
-            }
+            oneDimensional[c * rowCount + r] = twoDimensional[c, r];
         }
 
     //printing one dimensional array
