@@ -30,6 +30,8 @@ namespace Bridge
           listBox1.Items.Clear();             // clear the listBox
           myDeck.Shuffle();                   // shuffle the deckArray 
 
+          myDeck.Print(listBox1);
+
           // create the 4 handArrays, sort the handArrays and display them
           for (int i = 0; i < HANDS; i++)
           {
