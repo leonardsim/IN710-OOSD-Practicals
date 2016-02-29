@@ -53,6 +53,7 @@
             this.btnAddMovie.TabIndex = 0;
             this.btnAddMovie.Text = "Add Movie";
             this.btnAddMovie.UseVisualStyleBackColor = true;
+            this.btnAddMovie.Click += new System.EventHandler(this.btnAddMovie_Click);
             // 
             // label1
             // 
@@ -110,6 +111,7 @@
             this.btnDeleteMovie.TabIndex = 7;
             this.btnDeleteMovie.Text = "Delete Movie";
             this.btnDeleteMovie.UseVisualStyleBackColor = true;
+            this.btnDeleteMovie.Click += new System.EventHandler(this.btnDeleteMovie_Click);
             // 
             // label4
             // 
@@ -142,7 +144,6 @@
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Year:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnSearch
             // 
@@ -152,6 +153,7 @@
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnPrint
             // 
@@ -161,13 +163,14 @@
             this.btnPrint.TabIndex = 13;
             this.btnPrint.Text = "Print All";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // listBoxPrintAll
             // 
             this.listBoxPrintAll.FormattingEnabled = true;
-            this.listBoxPrintAll.Location = new System.Drawing.Point(203, 303);
+            this.listBoxPrintAll.Location = new System.Drawing.Point(166, 303);
             this.listBoxPrintAll.Name = "listBoxPrintAll";
-            this.listBoxPrintAll.Size = new System.Drawing.Size(224, 134);
+            this.listBoxPrintAll.Size = new System.Drawing.Size(261, 134);
             this.listBoxPrintAll.TabIndex = 14;
             // 
             // Form1

@@ -13,6 +13,7 @@ namespace MovieDatabase
         public String Title { get; set; }
         public String Director { get; set; }
 
+
         //Constructor
         public Movie(int year, String title, String director)
         {
