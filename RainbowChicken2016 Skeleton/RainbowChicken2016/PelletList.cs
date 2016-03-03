@@ -175,7 +175,18 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Draw()
         {
-            throw new NotImplementedException();
+            // Assign the pelletWalker to reference the same pellet as headPointer
+            Pellet pelletWalker = headPointer;
+
+            // Loop through the list as long as it is not null
+            while (pelletWalker != null)
+            {
+                // Draws the pellet
+                pelletWalker.Draw();
+
+                // Save next pellet to pelletWalker
+                pelletWalker = pelletWalker.Next;
+            }
         }
     }
 }
