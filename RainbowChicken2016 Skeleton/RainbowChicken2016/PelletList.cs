@@ -153,7 +153,21 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteNotAlive()
         {
-            throw new NotImplementedException();
+            // Assign the pelletWalker to reference the same pellet as headPointer
+            Pellet pelletWalker = headPointer;
+
+            // Loop through the list as long as it is not null
+            while (pelletWalker != null)
+            {
+                // Check if the state current pellet and if it is false then it will run the DeleteOne method
+                if (pelletWalker.IsAlive == false)
+                {
+                    DeleteOne(pelletWalker);
+                }
+
+                // Save next pellet to pelletWalker
+                pelletWalker = pelletWalker.Next;
+            }
         }
 
         //==============================================================================
