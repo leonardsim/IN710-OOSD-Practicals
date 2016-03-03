@@ -39,7 +39,6 @@ namespace RainbowChicken2016
                 tailPointer.Next = newPellet;
                 tailPointer = newPellet;
             }
-            throw new NotImplementedException();
         }
 
         //==============================================================================
@@ -47,7 +46,20 @@ namespace RainbowChicken2016
         //==============================================================================
         public int Count()
         {
-            throw new NotImplementedException();
+            // Create count to keep track of how many pellets there are
+            // Assign the pelletWalker to reference the same pellet as headPointer
+            int count = 0;
+            Pellet pelletWalker = headPointer;
+
+            // if the pelletWalker has not reached the end of the list then increment the count and set the
+            // pelletWalker to point to the next pellet in the list
+            while (pelletWalker != null)
+            {
+                count++;
+                pelletWalker = pelletWalker.Next;
+            }
+
+            return count;
         }
 
         //==============================================================================
