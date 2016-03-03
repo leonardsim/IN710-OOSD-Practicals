@@ -26,6 +26,19 @@ namespace RainbowChicken2016
         //==============================================================================
         public void addPellet(Pellet newPellet)
         {
+            // Add to empty list
+            if (headPointer == null)
+            {
+                // Both head and tail pointer point to the new single pellet
+                headPointer = newPellet;
+                tailPointer = newPellet;
+            }
+            else
+            {
+                // The newPellet will be added to the Next of tail (making a new node) and the pointer will point to that node now
+                tailPointer.Next = newPellet;
+                tailPointer = newPellet;
+            }
             throw new NotImplementedException();
         }
 
