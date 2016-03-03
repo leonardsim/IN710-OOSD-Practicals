@@ -67,7 +67,14 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Move()
         {
-            throw new NotImplementedException();
+            // Assign the pelletWalker to reference the same pellet as headPointer
+            Pellet pelletWalker = headPointer;
+
+            while (pelletWalker != null)
+            {
+                pelletWalker.Move();
+                pelletWalker = pelletWalker.Next;
+            }
         }
 
         //==============================================================================
@@ -76,7 +83,17 @@ namespace RainbowChicken2016
         //==============================================================================
         public void KillOutOfBounds()
         {
-            throw new NotImplementedException();
+            Pellet pelletWalker = headPointer;
+
+            while (pelletWalker != null)
+            {
+                if (pelletWalker.TestOutOfBounds(boundsRectangle) == true)
+                {
+                    pelletWalker.IsAlive = false;
+                }
+
+                pelletWalker = pelletWalker.Next; 
+            }
         }
 
         //==============================================================================
