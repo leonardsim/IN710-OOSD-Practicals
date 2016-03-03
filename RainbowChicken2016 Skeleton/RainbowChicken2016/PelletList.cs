@@ -83,15 +83,18 @@ namespace RainbowChicken2016
         //==============================================================================
         public void KillOutOfBounds()
         {
+            // Assign the pelletWalker to reference the same pellet as headPointer
             Pellet pelletWalker = headPointer;
 
             while (pelletWalker != null)
             {
+                // When pelletWalker goes out of bound, the bool alive property is set to false
                 if (pelletWalker.TestOutOfBounds(boundsRectangle) == true)
                 {
                     pelletWalker.IsAlive = false;
                 }
 
+                // Set next pellet to be the pelletWalker
                 pelletWalker = pelletWalker.Next; 
             }
         }
@@ -103,7 +106,46 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteOne(Pellet pelletToDelete)
         {
-            throw new NotImplementedException();
+            // Assign the pelletWalker to reference the same pellet as headPointer
+            Pellet pelletWalker = headPointer;
+
+            // Checks if the pelletWalker and pelletToDelete points to the same pellet
+            if (headPointer == pelletToDelete)
+            {
+                // Check if the next one on the list is null
+                // If it is then there is only one Pellet left in the List and headPointer and tailPointer will be set to null
+                if (pelletWalker.Next == null)
+                {
+                    headPointer = null;
+                    tailPointer = null;
+                }
+                else
+                {
+                    // Set the second pellet in List to be the headPointer
+                    headPointer = pelletWalker.Next;
+                }
+            }
+            else
+            {
+                // Will loop through if pelletWalker.Next does not equal to pelletToDelete
+                // and have pelletWalker traverse along the List until it points to the pelletToDelete
+                while(pelletWalker.Next != pelletToDelete)
+                {
+                    pelletWalker = pelletWalker.Next; 
+                }
+
+                // When out of the loop, the pelletWalker.Next = pelletToDelete 
+                // the next pellet of the pelletToDelete will be saved into the next pellet of pelletWalker (which is pelletToDelete)
+                // so the pellet next to pelletToDelete will now take the place of pelletToDelete
+                pelletWalker.Next = pelletToDelete.Next;
+
+                // Checks if the next pellet is at the end of the List
+                // if it is then set current pellet (pelletWalker) to tailPointer
+                if (pelletWalker.Next == null)
+                {
+                    tailPointer = pelletWalker;
+                }
+            }
         }
 
         //==============================================================================
