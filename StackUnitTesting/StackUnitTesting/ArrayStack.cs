@@ -42,7 +42,21 @@ namespace StackUnitTesting
                 countArray--;
                 stackString[countArray] = null;
 
-                return recentElement;
+                return "The string '" + recentElement + "' was removed from stack";
+            }
+        }
+
+        public String Peek()
+        {
+            String recentElement = stackString[countArray];
+
+            if (countArray == -1)
+            {
+                return "There are no elements recently added";
+            }
+            else
+            {
+                return "The string '" + recentElement + "' was recently added to stack";
             }
         }
 
