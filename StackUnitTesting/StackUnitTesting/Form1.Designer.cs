@@ -43,6 +43,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
@@ -52,13 +53,14 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // listPrintAll
             // 
             this.listPrintAll.FormattingEnabled = true;
             this.listPrintAll.Location = new System.Drawing.Point(108, 58);
             this.listPrintAll.Name = "listPrintAll";
-            this.listPrintAll.Size = new System.Drawing.Size(164, 186);
+            this.listPrintAll.Size = new System.Drawing.Size(316, 186);
             this.listPrintAll.TabIndex = 2;
             // 
             // btnPeek
@@ -69,6 +71,7 @@
             this.btnPeek.TabIndex = 3;
             this.btnPeek.Text = "Peek";
             this.btnPeek.UseVisualStyleBackColor = true;
+            this.btnPeek.Click += new System.EventHandler(this.btnPeek_Click);
             // 
             // btnShowAll
             // 
@@ -83,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(436, 261);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnPeek);
             this.Controls.Add(this.listPrintAll);
