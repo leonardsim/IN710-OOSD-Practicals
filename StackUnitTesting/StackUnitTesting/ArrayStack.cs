@@ -10,16 +10,15 @@ namespace StackUnitTesting
     public class ArrayStack
     {
         //Constant
-        const int ARRAY_SIZE = 3;
 
         //Variables
         String[] stackString;
         int countArray;
 
         //Constructor
-        public ArrayStack()
+        public ArrayStack(int arraySize)
         {
-            stackString = new String[ARRAY_SIZE];
+            stackString = new String[arraySize];
             countArray = -1;
         }
 
