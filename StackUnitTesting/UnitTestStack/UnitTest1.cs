@@ -77,7 +77,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Peek_PeekLatestElement_ReturnProperFeedback()
+        public void Peek_PeekOnlyOneLatestElement_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -106,6 +106,19 @@ namespace UnitTestStack
             String actual = stack.Peek();
 
             //Check if the peek properly outputs the correct feedback
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_EmptyStack_ReturnNegativeOne()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            int expected = -1;
+            int actual = stack.Count();
+
+            // Checks if the stack is actually empty
             Assert.AreEqual(expected, actual);
         }
     }
