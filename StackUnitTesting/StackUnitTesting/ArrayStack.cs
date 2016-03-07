@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StackUnitTesting
 {
@@ -23,26 +24,33 @@ namespace StackUnitTesting
         }
 
         //Methods
-        public void Push(string newString)
+        public void Push(string newString) 
         {
-            countArray++;
-            stackString[countArray] = newString;
+            try
+            {
+                countArray++;
+                stackString[countArray] = newString;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new System.IndexOutOfRangeException("The array is overflowed", e);
+            }
         }
 
         public String Pop()
         {
             String recentElement = stackString[countArray]; 
 
-            if(countArray == -1)
-            {
-                return "There are no elements to Pop";
-            }
-            else
+            try
             {
                 countArray--;
                 stackString[countArray] = null;
 
                 return "The string '" + recentElement + "' was removed from stack";
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new System.IndexOutOfRangeException("Tried to peek an empty list", e);
             }
         }
 
@@ -50,13 +58,13 @@ namespace StackUnitTesting
         {
             String recentElement = stackString[countArray];
 
-            if (countArray == -1)
-            {
-                return "There are no elements recently added";
-            }
-            else
+            try
             {
                 return "The string '" + recentElement + "' was recently added to stack";
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                throw new System.IndexOutOfRangeException("Tried to peek an empty list", e);
             }
         }
 

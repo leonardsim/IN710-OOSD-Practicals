@@ -24,13 +24,13 @@ namespace StackUnitTesting
         private void btnAdd_Click(object sender, EventArgs e)
         {
             fStack.Push("Ayy");
-            listPrintAll.Items.Add("Item added. Number of free array slots left: " + fStack.Count() + "/" + fStack.StackString.Length);
+            listPrintAll.Items.Add("Item added. Stack[" + fStack.Count() + "/" + (fStack.StackString.Length - 1) + "]");
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             fStack.Pop();
-            listPrintAll.Items.Add("Item removed. Number of free array slots left: " + fStack.Count() + "/" + fStack.StackString.Length);
+            listPrintAll.Items.Add("Item removed. Stack[" + fStack.Count() + "/" + (fStack.StackString.Length - 1) + "]");
         }
 
         private void btnPeek_Click(object sender, EventArgs e)
