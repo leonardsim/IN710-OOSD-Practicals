@@ -42,5 +42,21 @@ namespace UnitTestStack
             // Popping an empty array 
             stack.Peek();
         }
+
+        [TestMethod]
+        public void Push_PushAnElement_SuccessfulPush()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack();
+
+            // Push an element
+            stack.Push("Test");
+
+            string expected = stack.StackString[0];
+            string actual = "Test";
+
+            //Check if the first element added is the same as actual
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
