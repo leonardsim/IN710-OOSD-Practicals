@@ -197,5 +197,42 @@ namespace UnitTestStack
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Count_PeekMultiItems_CountRemainsTheSame()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Test");
+            stack.Push("Tong");
+
+            int countBeforePeeking = stack.Count();
+
+            stack.Peek();
+            stack.Peek();
+
+            int countAfterPeeking = stack.Count();
+
+            Assert.AreEqual(countBeforePeeking, countAfterPeeking);
+        }
+
+        [TestMethod]
+        public void IsEmpty_PopFullyStackArray_ReturnTrue()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Test");
+            stack.Push("Test");
+
+            stack.Pop();
+            stack.Pop();
+
+            bool expected = true;
+            bool actual = stack.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

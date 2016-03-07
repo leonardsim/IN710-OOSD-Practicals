@@ -21,6 +21,8 @@ namespace StackUnitTesting
         }
 
         //Methods
+        // Will add string element into the array and will throw an exception handler 
+        // when an element is added to a fully filled array
         public void Push(string newString) 
         {
             try
@@ -34,6 +36,7 @@ namespace StackUnitTesting
             }
         }
 
+        // Removes an element from the array and returns feedback to the user
         public String Pop()
         {
             String recentElement = stackString[countArray - 1]; 
@@ -49,6 +52,7 @@ namespace StackUnitTesting
             }
         }
 
+        // Outputs the most recently added element in the array
         public String Peek()
         {
             String recentElement = stackString[countArray - 1];
@@ -63,14 +67,16 @@ namespace StackUnitTesting
             }
         }
 
+        // Returns the number of strings held in the array
         public int Count()
         {
             return countArray;
         }
 
+        // Returns true or false based on whether the stack is empty or has elements in it
         public bool IsEmpty()
         {
-            if (countArray == 0 && (stackString[countArray] == null || stackString[countArray] == ""))
+            if (countArray == 0 && stackString[countArray] == null)
             {
                 return true;
             }
