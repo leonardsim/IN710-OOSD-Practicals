@@ -60,7 +60,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Pop_PopAnElement_SuccessfulPop()
+        public void Pop_PopAnElement_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -73,6 +73,39 @@ namespace UnitTestStack
             String actual = stack.Pop();
 
             //Check if the pop properly outputs the correct feedback
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Peek_PeekLatestElement_ReturnProperFeedback()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            // Push an element
+            stack.Push("Test");
+
+            String expected = "The string 'Test' was recently added to stack";
+            String actual = stack.Peek();
+
+            //Check if the peek properly outputs the correct feedback
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Peek_CheckIfPeekOnLatest_ReturnProperFeedback()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            // Push an element
+            stack.Push("Test");
+            stack.Push("Ayy");
+
+            String expected = "The string 'Ayy' was recently added to stack";
+            String actual = stack.Peek();
+
+            //Check if the peek properly outputs the correct feedback
             Assert.AreEqual(expected, actual);
         }
     }
