@@ -31,7 +31,19 @@ namespace StackUnitTesting
 
         public String Pop()
         {
+            String recentElement = stackString[countArray]; 
 
+            if(countArray == -1)
+            {
+                return "There are no elements to Pop";
+            }
+            else
+            {
+                countArray--;
+                stackString[countArray] = null;
+
+                return recentElement;
+            }
         }
 
         //Get/Set methods
