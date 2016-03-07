@@ -39,7 +39,6 @@ namespace StackUnitTesting
         public String Pop()
         {
             String recentElement = stackString[countArray]; 
-
             try
             {
                 countArray--;

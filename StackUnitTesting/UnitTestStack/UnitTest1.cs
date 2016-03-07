@@ -135,7 +135,40 @@ namespace UnitTestStack
             int expected = 1;
             int actual = stack.Count();
 
-            // Checks if the stack is actually empty
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Pop_ASingleFilledArray_ReturnProperFeedback()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            // Push elements
+            stack.Push("Test");
+            stack.Pop();
+
+            String expected = "The string 'Test' was removed from stack";
+            String actual = stack.Pop();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_FilledArrayThenEmptied_ReturnNegativeOne()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            // Push elements
+            stack.Push("Test");
+            stack.Push("Test");
+            stack.Pop();
+            stack.Pop();
+
+            int expected = -1;
+            int actual = stack.Count();
+
             Assert.AreEqual(expected, actual);
         }
     }
