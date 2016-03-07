@@ -32,7 +32,6 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.listPrintAll = new System.Windows.Forms.ListBox();
             this.btnPeek = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -73,21 +72,11 @@
             this.btnPeek.UseVisualStyleBackColor = true;
             this.btnPeek.Click += new System.EventHandler(this.btnPeek_Click);
             // 
-            // btnShowAll
-            // 
-            this.btnShowAll.Location = new System.Drawing.Point(13, 148);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(75, 23);
-            this.btnShowAll.TabIndex = 4;
-            this.btnShowAll.Text = "Show All";
-            this.btnShowAll.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 261);
-            this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnPeek);
             this.Controls.Add(this.listPrintAll);
             this.Controls.Add(this.btnRemove);
@@ -104,7 +93,6 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.ListBox listPrintAll;
         private System.Windows.Forms.Button btnPeek;
-        private System.Windows.Forms.Button btnShowAll;
     }
 }
 

@@ -20,5 +20,27 @@ namespace UnitTestStack
             stack.Push("a");
             stack.Push("a");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException), "Tried to pop an empty list")]
+        public void Pop_PopEmptyList_ReturnExceptionHandler()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack();
+
+            // Popping an empty array 
+            stack.Pop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException), "Tried to peek an empty list")]
+        public void Peek_PeekEmptyList_ReturnExceptionHandler()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack();
+
+            // Popping an empty array 
+            stack.Peek();
+        }
     }
 }

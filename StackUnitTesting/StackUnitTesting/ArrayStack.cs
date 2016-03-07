@@ -50,7 +50,7 @@ namespace StackUnitTesting
             }
             catch (IndexOutOfRangeException e)
             {
-                throw new System.IndexOutOfRangeException("Tried to peek an empty list", e);
+                throw new System.IndexOutOfRangeException("Tried to pop an empty list", e);
             }
         }
 
