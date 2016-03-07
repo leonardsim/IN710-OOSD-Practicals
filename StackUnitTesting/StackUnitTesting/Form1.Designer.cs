@@ -28,12 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.listPrintAll = new System.Windows.Forms.ListBox();
+            this.btnPeek = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(13, 58);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(13, 87);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // listPrintAll
+            // 
+            this.listPrintAll.FormattingEnabled = true;
+            this.listPrintAll.Location = new System.Drawing.Point(108, 58);
+            this.listPrintAll.Name = "listPrintAll";
+            this.listPrintAll.Size = new System.Drawing.Size(164, 186);
+            this.listPrintAll.TabIndex = 2;
+            // 
+            // btnPeek
+            // 
+            this.btnPeek.Location = new System.Drawing.Point(13, 118);
+            this.btnPeek.Name = "btnPeek";
+            this.btnPeek.Size = new System.Drawing.Size(75, 23);
+            this.btnPeek.TabIndex = 3;
+            this.btnPeek.Text = "Peek";
+            this.btnPeek.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(13, 148);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(75, 23);
+            this.btnShowAll.TabIndex = 4;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnShowAll);
+            this.Controls.Add(this.btnPeek);
+            this.Controls.Add(this.listPrintAll);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnAdd);
+            this.Name = "Form1";
+            this.Text = "StackArray";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.ListBox listPrintAll;
+        private System.Windows.Forms.Button btnPeek;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
 
