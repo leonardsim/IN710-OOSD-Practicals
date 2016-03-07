@@ -60,6 +60,23 @@ namespace StackUnitTesting
             }
         }
 
+        public int Count()
+        {
+            return countArray;
+        }
+
+        public bool IsEmpty()
+        {
+            if (countArray == -1 && (stackString[countArray] == null || stackString[countArray] == ""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Get/Set methods
         public String[] StackString
         {
