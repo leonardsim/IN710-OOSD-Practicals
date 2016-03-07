@@ -115,7 +115,7 @@ namespace UnitTestStack
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
 
-            int expected = -1;
+            int expected = 0;
             int actual = stack.Count();
 
             // Checks if the stack is actually empty
@@ -123,7 +123,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Count_ArrayStackWithItems_ReturnOne()
+        public void Count_ArrayStackWithItems_ReturnTwo()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -132,7 +132,7 @@ namespace UnitTestStack
             stack.Push("Test");
             stack.Push("Test");
 
-            int expected = 1;
+            int expected = 2;
             int actual = stack.Count();
 
             Assert.AreEqual(expected, actual);
@@ -146,7 +146,6 @@ namespace UnitTestStack
 
             // Push elements
             stack.Push("Test");
-            stack.Pop();
 
             String expected = "The string 'Test' was removed from stack";
             String actual = stack.Pop();
@@ -155,7 +154,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Count_FilledArrayThenEmptied_ReturnNegativeOne()
+        public void Count_FilledArrayThenEmptied_ReturnZero()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -166,8 +165,35 @@ namespace UnitTestStack
             stack.Pop();
             stack.Pop();
 
-            int expected = -1;
+            int expected = 0;
             int actual = stack.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IsEmpty_EmptyStackArray_ReturnTrue()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            bool expected = true;
+            bool actual = stack.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IsEmpty_StackArrayFull_ReturnFalse()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Test");
+            stack.Push("Test");
+
+            bool expected = false;
+            bool actual = stack.IsEmpty();
 
             Assert.AreEqual(expected, actual);
         }

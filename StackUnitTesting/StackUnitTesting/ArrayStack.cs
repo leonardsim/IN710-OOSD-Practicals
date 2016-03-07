@@ -9,8 +9,6 @@ namespace StackUnitTesting
 {
     public class ArrayStack
     {
-        //Constant
-
         //Variables
         String[] stackString;
         int countArray;
@@ -19,7 +17,7 @@ namespace StackUnitTesting
         public ArrayStack(int arraySize)
         {
             stackString = new String[arraySize];
-            countArray = -1;
+            countArray = 0;
         }
 
         //Methods
@@ -27,8 +25,8 @@ namespace StackUnitTesting
         {
             try
             {
-                countArray++;
                 stackString[countArray] = newString;
+                countArray++;
             }
             catch (IndexOutOfRangeException e)
             {
@@ -38,11 +36,10 @@ namespace StackUnitTesting
 
         public String Pop()
         {
-            String recentElement = stackString[countArray]; 
+            String recentElement = stackString[countArray - 1]; 
             try
             {
-                countArray--;
-                stackString[countArray] = null;
+                stackString[--countArray] = null;
 
                 return "The string '" + recentElement + "' was removed from stack";
             }
@@ -54,7 +51,7 @@ namespace StackUnitTesting
 
         public String Peek()
         {
-            String recentElement = stackString[countArray];
+            String recentElement = stackString[countArray - 1];
 
             try
             {
@@ -73,7 +70,7 @@ namespace StackUnitTesting
 
         public bool IsEmpty()
         {
-            if (countArray == -1 && (stackString[countArray] == null || stackString[countArray] == ""))
+            if (countArray == 0 && (stackString[countArray] == null || stackString[countArray] == ""))
             {
                 return true;
             }
