@@ -9,7 +9,7 @@ namespace UnitTestStack
     {
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException), "The array has overflowed")]
-        public void Push_StackArrayOverflows_ReturnExceptionHandler()
+        public void Push_FilledArrayStack_ReturnExceptionHandler()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(3);
@@ -23,7 +23,7 @@ namespace UnitTestStack
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException), "Tried to pop an empty list")]
-        public void Pop_PopEmptyList_ReturnExceptionHandler()
+        public void Pop_AnEmptyList_ReturnExceptionHandler()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -34,7 +34,7 @@ namespace UnitTestStack
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException), "Tried to peek an empty list")]
-        public void Peek_PeekEmptyList_ReturnExceptionHandler()
+        public void Peek_InEmptyList_ReturnExceptionHandler()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -44,7 +44,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Push_PushAnElement_SuccessfulPush()
+        public void Push_InElementIntoStack_SuccessfulPush()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -60,7 +60,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Pop_PopAnElement_ReturnProperFeedback()
+        public void Pop_Element_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -77,7 +77,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Peek_PeekOnlyOneLatestElement_ReturnProperFeedback()
+        public void Peek_OnlyOneLatestElement_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -93,7 +93,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Peek_CheckIfPeekOnLatest_ReturnProperFeedback()
+        public void Peek_IfElementIsLatest_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -116,6 +116,23 @@ namespace UnitTestStack
             ArrayStack stack = new ArrayStack(2);
 
             int expected = -1;
+            int actual = stack.Count();
+
+            // Checks if the stack is actually empty
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_ArrayStackWithItems_ReturnOne()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            // Push elements
+            stack.Push("Test");
+            stack.Push("Test");
+
+            int expected = 1;
             int actual = stack.Count();
 
             // Checks if the stack is actually empty
