@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StackUnitTesting;
 
 namespace UnitTestStack
 {
@@ -7,8 +8,17 @@ namespace UnitTestStack
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        [ExpectedException(typeof(IndexOutOfRangeException), "The array has overflowed")]
+        public void Push_StackArrayOverflows_ReturnExceptionHandler()
         {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack();
+
+            // Array size is 3 so pushing 4 times will cause the array to overflow
+            stack.Push("a");
+            stack.Push("a");
+            stack.Push("a");
+            stack.Push("a");
         }
     }
 }

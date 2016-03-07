@@ -10,7 +10,7 @@ namespace StackUnitTesting
     public class ArrayStack
     {
         //Constant
-        const int ARRAY_SIZE = 5;
+        const int ARRAY_SIZE = 3;
 
         //Variables
         String[] stackString;
@@ -33,7 +33,7 @@ namespace StackUnitTesting
             }
             catch (IndexOutOfRangeException e)
             {
-                throw new System.IndexOutOfRangeException("The array is overflowed", e);
+                throw new System.IndexOutOfRangeException("The array has overflowed", e);
             }
         }
 
