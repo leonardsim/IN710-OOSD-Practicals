@@ -60,7 +60,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Pop_Element_ReturnProperFeedback()
+        public void Pop_OutElementFromStack_ReturnProperFeedback()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -110,7 +110,7 @@ namespace UnitTestStack
         }
 
         [TestMethod]
-        public void Count_EmptyStack_ReturnNegativeOne()
+        public void Count_EmptyStack_ReturnZero()
         {
             // Create and initialise ArrayStack
             ArrayStack stack = new ArrayStack(2);
@@ -231,6 +231,56 @@ namespace UnitTestStack
 
             bool expected = true;
             bool actual = stack.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Peek_RemoveAnItemFromStack_ReturnLastItem()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Tong");
+            stack.Push("Test");
+
+            stack.Pop();
+
+            String expected = "The string 'Tong' was recently added to stack";
+            String actual = stack.Peek();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_RemoveOneItemFromFilledStack_ReturnOne()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Tong");
+            stack.Push("Test");
+
+            stack.Pop();
+
+            int expected = 1;
+            int actual = stack.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_RemoveAnItemFromStackWithOneItem_ReturnOne()
+        {
+            // Create and initialise ArrayStack
+            ArrayStack stack = new ArrayStack(2);
+
+            stack.Push("Tong");
+
+            stack.Pop();
+
+            int expected = 0;
+            int actual = stack.Count();
 
             Assert.AreEqual(expected, actual);
         }

@@ -23,7 +23,7 @@ namespace StackUnitTesting
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            fStack.Push("Ayy");
+            fStack.Push("3");
             listPrintAll.Items.Add("Item added. Stack[" + fStack.Count() + "/" + (fStack.StackString.Length - 1) + "]");
         }
 
