@@ -105,8 +105,10 @@ namespace Game_Character
                     MessageBox.Show("None of the weapons have been selected!");
                 }
             }
+            setRadioButtonToFalse();
         }
 
+        // Outputs the character methods (name, declaim and weapon)
         public void outputBattle()
         {
             foreach (int indexChecked in checkedListBox1.CheckedIndices)
@@ -114,18 +116,23 @@ namespace Game_Character
                 listBox1.Items.Add(charactersList[indexChecked].StateName());
                 listBox1.Items.Add(charactersList[indexChecked].Declaim());
                 listBox1.Items.Add(charactersList[indexChecked].outputWeapon());
+                listBox1.Items.Add("********************************************");
             }
         }
 
-        
+        // Sets all the radio buttons back to false
         public void setRadioButtonToFalse()
         {
             rdKing.Checked = false;
             rdQueen.Checked = false;
             rdKnight.Checked = false;
             rdTroll.Checked = false;
+            rdSword.Checked = false;
+            rdBow.Checked = false;
+            rdKnife.Checked = false;
         }
 
+        // Clears the lists 
         public void updateList()
         {
             checkedListBox1.Items.Clear();
