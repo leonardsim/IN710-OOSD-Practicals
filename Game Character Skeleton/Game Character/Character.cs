@@ -10,6 +10,7 @@ namespace Game_Character
     {
         //Variables
         protected string name;
+        protected IWeapon weapon;
 
         //Constructor
         public Character(string name)
