@@ -32,7 +32,7 @@ namespace Game_Character
         }
 
         // Get/Set method
-        protected string Name
+        public string Name
         {
             get { return name; }
             set { name = value; }
