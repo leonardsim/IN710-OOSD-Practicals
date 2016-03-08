@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Character
 {
-    class Troll
+    class Troll : Character
     {
     }
 }

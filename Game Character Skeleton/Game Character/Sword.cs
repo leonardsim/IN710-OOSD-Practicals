@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Character
 {
-    class Queen : Character
+    class Sword
     {
     }
 }
