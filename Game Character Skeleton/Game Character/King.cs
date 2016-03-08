@@ -20,5 +20,7 @@ namespace Game_Character
         {
             return "I am the most mighty of Kings!";
         }
+
+        public string name { get; set; }
     }
 }

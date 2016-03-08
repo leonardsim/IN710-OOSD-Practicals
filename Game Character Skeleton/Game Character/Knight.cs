@@ -20,5 +20,7 @@ namespace Game_Character
         {
             return "I am a chivalrous Knight!";
         }
+
+        public string name { get; set; }
     }
 }

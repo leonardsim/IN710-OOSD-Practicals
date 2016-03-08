@@ -19,5 +19,7 @@ namespace Game_Character
         {
             return "GET OUT NORMIES REEEEEEEEEEEEEEEEEEEE!";
         }
+
+        public string name { get; set; }
     }
 }

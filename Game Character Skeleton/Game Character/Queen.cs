@@ -20,5 +20,7 @@ namespace Game_Character
         {
             return "I am the powerful Queen!";
         }
+
+        public string name { get; set; }
     }
 }
