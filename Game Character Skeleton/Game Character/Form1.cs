@@ -22,6 +22,7 @@ namespace Game_Character
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
+            updateList();
             addCharacters();
         }
 
@@ -115,6 +116,7 @@ namespace Game_Character
                 listBox1.Items.Add(charactersList[indexChecked].outputWeapon());
             }
         }
+
         
         public void setRadioButtonToFalse()
         {
@@ -122,6 +124,12 @@ namespace Game_Character
             rdQueen.Checked = false;
             rdKnight.Checked = false;
             rdTroll.Checked = false;
+        }
+
+        public void updateList()
+        {
+            checkedListBox1.Items.Clear();
+            checkedListBox2.Items.Clear();
         }
     }
 }
