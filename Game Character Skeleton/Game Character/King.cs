@@ -8,11 +8,11 @@ namespace Game_Character
 {
     class King : Character
     {
-
         //Constructor
         public King(string name) : base(name)
         {
             this.name = name;
+            weapon = new Sword();
         }
 
         //Methods
