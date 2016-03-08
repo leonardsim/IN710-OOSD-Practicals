@@ -25,5 +25,17 @@ namespace Game_Character
         }
 
         public abstract string Declaim();
+
+        public string outputWeapon()
+        {
+            return weapon.useWeapon();
+        }
+
+        // Get/Set method
+        protected string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
     }
 }
