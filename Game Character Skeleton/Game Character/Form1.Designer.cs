@@ -208,6 +208,7 @@
             this.btnBattle.TabIndex = 22;
             this.btnBattle.Text = "Battle!";
             this.btnBattle.UseVisualStyleBackColor = true;
+            this.btnBattle.Click += new System.EventHandler(this.btnBattle_Click);
             // 
             // checkedListBox1
             // 
@@ -312,6 +313,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Change Weapon";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
