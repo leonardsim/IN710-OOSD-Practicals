@@ -37,5 +37,11 @@ namespace Game_Character
             get { return name; }
             set { name = value; }
         }
+
+        public IWeapon Weapon
+        {
+            get { return weapon; }
+            set { weapon = value; }
+        }
     }
 }
