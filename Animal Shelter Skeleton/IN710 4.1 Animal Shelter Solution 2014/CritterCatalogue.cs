@@ -7,7 +7,6 @@ using System.Windows.Forms;
 
 namespace IN710_4._1_Animal_Shelter_Solution_2014
 {
-
     public class CritterCatalogue
     {
         string inputFileName;
@@ -31,8 +30,24 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            /* YOUR CODE HERE */
-            throw new NotImplementedException();    // Remove after you write the method
+            // Declare and initialise a new Critter List
+            List<Critter> cL = new List<Critter>();
+
+            // Parse string speciesName into an enum
+            ESpecies currentSpecies = (ESpecies)System.Enum.Parse(typeof(ESpecies), speciesName);
+
+            // foreach through each critter in critterList and if the species in critter matches the currentSpecies
+            // then add critter into cL list
+            foreach (Critter c in critterList)
+            {
+                if (c.Species == currentSpecies)
+                {
+                    cL.Add(c);
+                }
+            }
+
+            //return the list
+            return cL;
         }
 
 
@@ -61,9 +76,15 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
 
                 while ((currentLine = sr.ReadLine()) != null)
                 {
+                    // Split it at the ','
+                    // currentAnimal[0] = animal name
+                    // currentAnimal[1] = species
                     currentAnimal = currentLine.Split(',');
 
+                    // Convert to enum ESpecies
                     ESpecies currentSpecies = (ESpecies)System.Enum.Parse(typeof(ESpecies), currentAnimal[1]);
+
+                    //Save to list
                     critterList.Add(new Critter(currentAnimal[0], currentSpecies));
                 } // end for each line
             } // end if sr != null
