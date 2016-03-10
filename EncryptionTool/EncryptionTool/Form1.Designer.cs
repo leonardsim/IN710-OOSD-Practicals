@@ -35,8 +35,8 @@
             this.rdoReversal = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtInput = new System.Windows.Forms.TextBox();
+            this.txtOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,6 +57,7 @@
             this.btnEncrypt.TabIndex = 1;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // btnDecrypt
             // 
@@ -67,6 +68,7 @@
             this.btnDecrypt.TabIndex = 2;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // rdoROT13
             // 
@@ -112,28 +114,28 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Output:";
             // 
-            // textBox1
+            // txtInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(403, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtInput.Location = new System.Drawing.Point(80, 146);
+            this.txtInput.Name = "txtInput";
+            this.txtInput.Size = new System.Drawing.Size(403, 20);
+            this.txtInput.TabIndex = 7;
             // 
-            // textBox2
+            // txtOutput
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(80, 197);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(403, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtOutput.Enabled = false;
+            this.txtOutput.Location = new System.Drawing.Point(80, 197);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(403, 20);
+            this.txtOutput.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 242);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOutput);
+            this.Controls.Add(this.txtInput);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rdoReversal);
@@ -157,8 +159,8 @@
         private System.Windows.Forms.RadioButton rdoReversal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtInput;
+        private System.Windows.Forms.TextBox txtOutput;
     }
 }
 
