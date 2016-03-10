@@ -36,7 +36,7 @@ namespace AnalogDigitalClock
         // Displays the time onto the label
         public void UpdateTimeDisplay()
         {
-            timeDisplayLabel.Text = DateTime.Now.ToShortTimeString();
+            timeDisplayLabel.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         // Turns visibility of digital clock on
