@@ -30,37 +30,41 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdoDigital = new System.Windows.Forms.RadioButton();
+            this.rdoAnalog = new System.Windows.Forms.RadioButton();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.lblDigital = new System.Windows.Forms.Label();
             this.analogClock1 = new AnalogClockControl.AnalogClock();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // timer1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(389, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(90, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Digital";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // radioButton2
+            // rdoDigital
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(389, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(122, 30);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Analogue";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoDigital.AutoSize = true;
+            this.rdoDigital.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoDigital.Location = new System.Drawing.Point(389, 12);
+            this.rdoDigital.Name = "rdoDigital";
+            this.rdoDigital.Size = new System.Drawing.Size(90, 29);
+            this.rdoDigital.TabIndex = 0;
+            this.rdoDigital.TabStop = true;
+            this.rdoDigital.Text = "Digital";
+            this.rdoDigital.UseVisualStyleBackColor = true;
+            // 
+            // rdoAnalog
+            // 
+            this.rdoAnalog.AutoSize = true;
+            this.rdoAnalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoAnalog.Location = new System.Drawing.Point(389, 47);
+            this.rdoAnalog.Name = "rdoAnalog";
+            this.rdoAnalog.Size = new System.Drawing.Size(122, 30);
+            this.rdoAnalog.TabIndex = 1;
+            this.rdoAnalog.TabStop = true;
+            this.rdoAnalog.Text = "Analogue";
+            this.rdoAnalog.UseVisualStyleBackColor = true;
             // 
             // btnStart
             // 
@@ -70,6 +74,7 @@
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start Clock";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnStop
             // 
@@ -79,6 +84,7 @@
             this.btnStop.TabIndex = 3;
             this.btnStop.Text = "Stop Clock";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // lblDigital
             // 
@@ -95,7 +101,7 @@
             this.analogClock1.Draw1MinuteTicks = true;
             this.analogClock1.Draw5MinuteTicks = true;
             this.analogClock1.HourHandColor = System.Drawing.Color.DarkMagenta;
-            this.analogClock1.Location = new System.Drawing.Point(98, 83);
+            this.analogClock1.Location = new System.Drawing.Point(89, 83);
             this.analogClock1.MinuteHandColor = System.Drawing.Color.Green;
             this.analogClock1.Name = "analogClock1";
             this.analogClock1.SecondHandColor = System.Drawing.Color.Red;
@@ -113,8 +119,8 @@
             this.Controls.Add(this.lblDigital);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdoAnalog);
+            this.Controls.Add(this.rdoDigital);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -125,8 +131,8 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdoDigital;
+        private System.Windows.Forms.RadioButton rdoAnalog;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblDigital;
