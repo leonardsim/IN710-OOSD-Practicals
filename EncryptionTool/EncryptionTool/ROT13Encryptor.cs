@@ -15,7 +15,7 @@ namespace EncryptionTool
 
             for (int i = 0; i < arrayChar.Length; i++)
             {
-                // Saves the content of arrayChar[i] as an int
+                // Saves the content of arrayChar[i] as an int by casting it
                 int numVal = (int)arrayChar[i];  
                 
                 // Checks if it is within the character range 1- 26
@@ -43,7 +43,7 @@ namespace EncryptionTool
                         numVal += 13;
                     }
                 }
-                // Convert the numVal back into a char and store it back into the array
+                // Cast the numVal back into a char and store it back into the array
                 arrayChar[i] = (char)numVal;
             }
 
