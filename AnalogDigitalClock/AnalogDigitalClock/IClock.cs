@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace AnalogDigitalClock
 {
-    interface IClock
+    public interface IClock
     {
+        void On();
+        void Off();
+        void UpdateTimeDisplay();
+        void ShowClock();
+        void HideClock();
+
     }
 }
