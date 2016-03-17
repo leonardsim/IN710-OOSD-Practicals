@@ -59,6 +59,7 @@
             this.btnAUS.TabIndex = 6;
             this.btnAUS.Text = "Australia";
             this.btnAUS.UseVisualStyleBackColor = true;
+            this.btnAUS.Click += new System.EventHandler(this.btnAUS_Click);
             // 
             // Form1
             // 

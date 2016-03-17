@@ -26,11 +26,26 @@ namespace ZoologicalSim
 
             rGen = new Random();
             canvas = this.CreateGraphics();
-            mCon = new NorthAmerica(lbAnimals, rGen, ANIMAL_COUNT, canvas);
         }
 
         private void btnNA_Click(object sender, EventArgs e)
         {
+            // Initialise mCon to be NorthAmerica
+            mCon = new NorthAmerica(lbAnimals, rGen, ANIMAL_COUNT, canvas);
+
+            // Clear the graphics and listbox
+            lbAnimals.Items.Clear();
+            canvas.Clear(Form1.ActiveForm.BackColor);
+
+            // Run simulation
+            mCon.runSimulation();
+        }
+
+        private void btnAUS_Click(object sender, EventArgs e)
+        {
+            // Initialise mCon to be Australia
+            mCon = new Australia(lbAnimals, rGen, ANIMAL_COUNT, canvas);
+
             // Clear the graphics and listbox
             lbAnimals.Items.Clear();
             canvas.Clear(Form1.ActiveForm.BackColor);
