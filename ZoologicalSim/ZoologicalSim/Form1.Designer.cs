@@ -31,6 +31,7 @@
             this.lbAnimals = new System.Windows.Forms.ListBox();
             this.btnNA = new System.Windows.Forms.Button();
             this.btnAUS = new System.Windows.Forms.Button();
+            this.btnAsia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbAnimals
@@ -38,7 +39,7 @@
             this.lbAnimals.FormattingEnabled = true;
             this.lbAnimals.Location = new System.Drawing.Point(120, 13);
             this.lbAnimals.Name = "lbAnimals";
-            this.lbAnimals.Size = new System.Drawing.Size(373, 277);
+            this.lbAnimals.Size = new System.Drawing.Size(351, 277);
             this.lbAnimals.TabIndex = 4;
             // 
             // btnNA
@@ -61,11 +62,21 @@
             this.btnAUS.UseVisualStyleBackColor = true;
             this.btnAUS.Click += new System.EventHandler(this.btnAUS_Click);
             // 
+            // btnAsia
+            // 
+            this.btnAsia.Location = new System.Drawing.Point(358, 298);
+            this.btnAsia.Name = "btnAsia";
+            this.btnAsia.Size = new System.Drawing.Size(113, 121);
+            this.btnAsia.TabIndex = 7;
+            this.btnAsia.Text = "Asia";
+            this.btnAsia.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 431);
+            this.ClientSize = new System.Drawing.Size(487, 431);
+            this.Controls.Add(this.btnAsia);
             this.Controls.Add(this.btnAUS);
             this.Controls.Add(this.btnNA);
             this.Controls.Add(this.lbAnimals);
@@ -80,6 +91,7 @@
         private System.Windows.Forms.ListBox lbAnimals;
         private System.Windows.Forms.Button btnNA;
         private System.Windows.Forms.Button btnAUS;
+        private System.Windows.Forms.Button btnAsia;
     }
 }
 
