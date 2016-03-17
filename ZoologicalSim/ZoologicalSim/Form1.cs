@@ -53,5 +53,18 @@ namespace ZoologicalSim
             // Run simulation
             mCon.runSimulation();
         }
+
+        private void btnAsia_Click(object sender, EventArgs e)
+        {
+            // Initialise mCon to be Australia
+            mCon = new Asia(lbAnimals, rGen, ANIMAL_COUNT, canvas);
+
+            // Clear the graphics and listbox
+            lbAnimals.Items.Clear();
+            canvas.Clear(Form1.ActiveForm.BackColor);
+
+            // Run simulation
+            mCon.runSimulation();
+        }
     }
 }

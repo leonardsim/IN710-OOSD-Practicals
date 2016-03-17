@@ -70,6 +70,7 @@
             this.btnAsia.TabIndex = 7;
             this.btnAsia.Text = "Asia";
             this.btnAsia.UseVisualStyleBackColor = true;
+            this.btnAsia.Click += new System.EventHandler(this.btnAsia_Click);
             // 
             // Form1
             // 
