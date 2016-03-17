@@ -45,7 +45,7 @@
             // 
             this.btnNA.Location = new System.Drawing.Point(120, 298);
             this.btnNA.Name = "btnNA";
-            this.btnNA.Size = new System.Drawing.Size(113, 89);
+            this.btnNA.Size = new System.Drawing.Size(113, 121);
             this.btnNA.TabIndex = 5;
             this.btnNA.Text = "North America";
             this.btnNA.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             // 
             this.btnAUS.Location = new System.Drawing.Point(239, 298);
             this.btnAUS.Name = "btnAUS";
-            this.btnAUS.Size = new System.Drawing.Size(113, 89);
+            this.btnAUS.Size = new System.Drawing.Size(113, 121);
             this.btnAUS.TabIndex = 6;
             this.btnAUS.Text = "Australia";
             this.btnAUS.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 499);
+            this.ClientSize = new System.Drawing.Size(511, 431);
             this.Controls.Add(this.btnAUS);
             this.Controls.Add(this.btnNA);
             this.Controls.Add(this.lbAnimals);
