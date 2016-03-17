@@ -13,7 +13,7 @@ namespace ZoologicalSim
     public partial class Form1 : Form
     {
         //Constant
-        const int ANIMAL_COUNT = 3;
+        const int ANIMAL_COUNT = 4;
 
         //Variables
         Continent mCon;

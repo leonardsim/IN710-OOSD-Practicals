@@ -11,7 +11,7 @@ namespace ZoologicalSim
     public abstract class Continent
     {
         //Constants
-        public const int ANIMAL_SIM_COUNT = 3;
+        public const int ANIMAL_SIM_COUNT = 4;
 
         //Variables
         protected ListBox displayBox;
