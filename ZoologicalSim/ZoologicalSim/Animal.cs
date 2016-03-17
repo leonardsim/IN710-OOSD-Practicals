@@ -13,7 +13,7 @@ namespace ZoologicalSim
         protected string name;
         protected string family;
         protected string food;
-        private Bitmap image;
+        protected Bitmap image;
 
         // Methods
         public override string ToString()
@@ -26,7 +26,7 @@ namespace ZoologicalSim
         }
 
         // Getter
-        protected Bitmap Image
+        public Bitmap Image
         {
             get { return image; } // read only
         }
