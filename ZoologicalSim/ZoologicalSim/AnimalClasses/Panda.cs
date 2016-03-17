@@ -13,7 +13,7 @@ namespace ZoologicalSim.AnimalClasses
         // Constructor
         public Panda()
         {
-            name = "Koala";
+            name = "Panda";
             family = "Omnivore";
             food = "Leaf & Meat";
             image = new Bitmap("panda.jpg");
