@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZoologicalSim
+namespace ZoologicalSim.AnimalClasses
 {
     public class NorthAmericanAnimalFactory : IAnimalFactory
     {
@@ -23,6 +23,9 @@ namespace ZoologicalSim
                     break;
                 case 2:
                     newAnimal = new Eagle();
+                    break;
+                case 3:
+                    newAnimal = new Bear();
                     break;
             }
 
