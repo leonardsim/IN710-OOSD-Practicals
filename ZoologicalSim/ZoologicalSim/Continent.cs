@@ -11,7 +11,7 @@ namespace ZoologicalSim
     public abstract class Continent
     {
         //Constants
-        public const int ANIMAL_SIM_COUNT = 4;
+        public const int ANIMAL_SIM_COUNT = 3;
 
         //Variables
         protected ListBox displayBox;
@@ -47,7 +47,8 @@ namespace ZoologicalSim
                 displayBox.Items.Add(currentAnimal.ToString());
 
                 // Argument takes in the bitmap and the X,Y-coordinates
-                canvas.DrawImage(currentAnimal.Image, 20, 20 + (i * 120));
+                // Added width and height to prevent unexpected resizing on one of the image
+                canvas.DrawImage(currentAnimal.Image, 10, 10 + (i * 105), 100, 100);
             }
 
         }
