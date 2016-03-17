@@ -8,6 +8,7 @@ namespace ZoologicalSim
 {
     public interface IAnimalFactory
     {
+        // Creates animals
         Animal createAnimal(int animalCode);
     }
 }
