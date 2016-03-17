@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZoologicalSim.AnimalClasses;
 
-namespace ZoologicalSim.AnimalClasses
+namespace ZoologicalSim
 {
     public class NorthAmericanAnimalFactory : IAnimalFactory
     {
