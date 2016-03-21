@@ -51,16 +51,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frankenstein.cs" />
+    <Compile Include="Monster Classes\Frankenstein.cs" />
     <Compile Include="IMonsterParts.cs" />
-    <Compile Include="Monster.cs" />
+    <Compile Include="Monster Classes\Monster.cs" />
     <Compile Include="MonsterFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skeleton.cs" />
-    <Compile Include="Vampire.cs" />
-    <Compile Include="Werewolf.cs" />
-    <Compile Include="Witch.cs" />
+    <Compile Include="Monster Classes\Skeleton.cs" />
+    <Compile Include="Monster Classes\Vampire.cs" />
+    <Compile Include="Monster Classes\Werewolf.cs" />
+    <Compile Include="Monster Classes\Witch.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
