@@ -48,6 +48,7 @@
             this.pbHead.Location = new System.Drawing.Point(13, 13);
             this.pbHead.Name = "pbHead";
             this.pbHead.Size = new System.Drawing.Size(290, 176);
+            this.pbHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbHead.TabIndex = 0;
             this.pbHead.TabStop = false;
             // 
@@ -56,6 +57,7 @@
             this.pbBody.Location = new System.Drawing.Point(13, 186);
             this.pbBody.Name = "pbBody";
             this.pbBody.Size = new System.Drawing.Size(290, 176);
+            this.pbBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBody.TabIndex = 1;
             this.pbBody.TabStop = false;
             // 
@@ -64,6 +66,7 @@
             this.pbLegs.Location = new System.Drawing.Point(13, 355);
             this.pbLegs.Name = "pbLegs";
             this.pbLegs.Size = new System.Drawing.Size(290, 176);
+            this.pbLegs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLegs.TabIndex = 2;
             this.pbLegs.TabStop = false;
             // 
@@ -126,6 +129,7 @@
             this.btnMakeMonster.TabIndex = 9;
             this.btnMakeMonster.Text = "Make Monster";
             this.btnMakeMonster.UseVisualStyleBackColor = true;
+            this.btnMakeMonster.Click += new System.EventHandler(this.btnMakeMonster_Click);
             // 
             // Form1
             // 
