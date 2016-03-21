@@ -16,21 +16,21 @@ namespace MixMatch
         //Method
         public Bitmap monsterHead()
         {
-            picture = new Bitmap(type + "_0");
+            picture = new Bitmap(type + "_0.png");
 
             return picture;
         }
 
         public Bitmap monsterBody()
         {
-            picture = new Bitmap(type + "_1");
+            picture = new Bitmap(type + "_1.png");
 
             return picture;
         }
 
         public Bitmap monsterLegs()
         {
-            picture = new Bitmap(type + "_2");
+            picture = new Bitmap(type + "_2.png");
 
             return picture;
         }
