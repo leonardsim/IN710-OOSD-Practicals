@@ -44,33 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessCPU.cs" />
-    <Compile Include="BusinessGPU.cs" />
-    <Compile Include="BusinessMachineMaker.cs" />
-    <Compile Include="BusinessMemory.cs" />
-    <Compile Include="CPU.cs" />
+    <Compile Include="Component Classes\BusinessCPU.cs" />
+    <Compile Include="Component Classes\BusinessGPU.cs" />
+    <Compile Include="MachineMaker Factory Classes\BusinessMachineMaker.cs" />
+    <Compile Include="Component Classes\BusinessMemory.cs" />
+    <Compile Include="Component Classes\CPU.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameCPU.cs" />
-    <Compile Include="GameGPU.cs" />
-    <Compile Include="GameMachineMaker.cs" />
-    <Compile Include="GameMemory.cs" />
-    <Compile Include="GPU.cs" />
-    <Compile Include="IMachineMaker.cs" />
-    <Compile Include="LaptopCPU.cs" />
-    <Compile Include="LaptopGPU.cs" />
-    <Compile Include="LaptopMachineMaker.cs" />
-    <Compile Include="LaptopMemory.cs" />
+    <Compile Include="Component Classes\GameCPU.cs" />
+    <Compile Include="Component Classes\GameGPU.cs" />
+    <Compile Include="MachineMaker Factory Classes\GameMachineMaker.cs" />
+    <Compile Include="Component Classes\GameMemory.cs" />
+    <Compile Include="Component Classes\GPU.cs" />
+    <Compile Include="MachineMaker Factory Classes\IMachineMaker.cs" />
+    <Compile Include="Component Classes\LaptopCPU.cs" />
+    <Compile Include="Component Classes\LaptopGPU.cs" />
+    <Compile Include="MachineMaker Factory Classes\LaptopMachineMaker.cs" />
+    <Compile Include="Component Classes\LaptopMemory.cs" />
     <Compile Include="MachineSpecPrinter.cs" />
-    <Compile Include="Memory.cs" />
-    <Compile Include="MultimediaCPU.cs" />
-    <Compile Include="MultimediaGPU.cs" />
-    <Compile Include="MultimediaMachineMaker.cs" />
-    <Compile Include="MultimediaMemory.cs" />
+    <Compile Include="Component Classes\Memory.cs" />
+    <Compile Include="Component Classes\MultimediaCPU.cs" />
+    <Compile Include="Component Classes\MultimediaGPU.cs" />
+    <Compile Include="MachineMaker Factory Classes\MultimediaMachineMaker.cs" />
+    <Compile Include="Component Classes\MultimediaMemory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
