@@ -61,6 +61,10 @@
     <Compile Include="GameMemory.cs" />
     <Compile Include="GPU.cs" />
     <Compile Include="IMachineMaker.cs" />
+    <Compile Include="LaptopCPU.cs" />
+    <Compile Include="LaptopGPU.cs" />
+    <Compile Include="LaptopMachineMaker.cs" />
+    <Compile Include="LaptopMemory.cs" />
     <Compile Include="MachineSpecPrinter.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="MultimediaCPU.cs" />
