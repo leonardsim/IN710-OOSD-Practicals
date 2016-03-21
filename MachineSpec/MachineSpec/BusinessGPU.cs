@@ -12,7 +12,7 @@ namespace MachineSpec
         public BusinessGPU()
         {
             name = "Nvidia Quadro K600";
-            price = "164.99";
+            price = 164.99;
         }
     }
 }

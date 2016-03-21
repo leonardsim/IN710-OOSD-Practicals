@@ -12,7 +12,7 @@ namespace MachineSpec
         public GameCPU()
         {
             name = "Core I7-6700K, 4.00 GHz";
-            price = "389.00";
+            price = 389.00;
         }
     }
 }

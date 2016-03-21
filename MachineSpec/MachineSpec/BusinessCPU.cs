@@ -12,7 +12,7 @@ namespace MachineSpec
         public BusinessCPU()
         {
             name = "Intel Xeon E3-1240 v3, 3.4 GHz";
-            price = "277.99";
+            price = 277.99;
         }
     }
 }

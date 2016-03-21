@@ -44,14 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessCPU.cs" />
+    <Compile Include="BusinessGPU.cs" />
+    <Compile Include="BusinessMachineMaker.cs" />
+    <Compile Include="BusinessMemory.cs" />
+    <Compile Include="CPU.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameCPU.cs" />
+    <Compile Include="GameGPU.cs" />
+    <Compile Include="GameMachineMaker.cs" />
+    <Compile Include="GameMemory.cs" />
+    <Compile Include="GPU.cs" />
+    <Compile Include="IMachineMaker.cs" />
+    <Compile Include="MachineSpecPrinter.cs" />
+    <Compile Include="Memory.cs" />
+    <Compile Include="MultimediaCPU.cs" />
+    <Compile Include="MultimediaGPU.cs" />
+    <Compile Include="MultimediaMachineMaker.cs" />
+    <Compile Include="MultimediaMemory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

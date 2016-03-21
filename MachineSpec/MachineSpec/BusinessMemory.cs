@@ -12,7 +12,7 @@ namespace MachineSpec
         public BusinessMemory()
         {
             name = "DIMM DDR3 PC3-12800 8GB";
-            price = "18.59";
+            price = 18.59;
         }
     }
 }

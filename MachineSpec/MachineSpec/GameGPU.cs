@@ -12,7 +12,7 @@ namespace MachineSpec
         public GameGPU()
         {
             name = "MSI GeForce GTX 980 Ti";
-            price = "659.99";
+            price = 659.99;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace MachineSpec
         public MultimediaGPU()
         {
             name = "AMD Radeon R9 290";
-            price = "358.00";
+            price = 358.00;
         }
     }
 }

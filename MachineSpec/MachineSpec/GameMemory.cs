@@ -12,7 +12,7 @@ namespace MachineSpec
         public GameMemory()
         {
             name = "G.Skill Ripjaws V Series DDR4 2666 (16GB)";
-            price = "77.99";
+            price = 77.99;
         }
     }
 }

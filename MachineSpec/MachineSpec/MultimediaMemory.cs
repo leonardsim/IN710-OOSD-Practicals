@@ -12,7 +12,7 @@ namespace MachineSpec
         public MultimediaMemory()
         {
             name = "CORSAIR Vengeance 32GB";
-            price = "168.99";
+            price = 168.99;
         }
     }
 }

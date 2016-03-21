@@ -12,7 +12,7 @@ namespace MachineSpec
         public MultimediaCPU()
         {
             name = "Intel Xeon E5-1680 v2, 3.00 GHz";
-            price = "723.00";
+            price = 723.00;
         }
     }
 }

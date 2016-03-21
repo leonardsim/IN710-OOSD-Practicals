@@ -10,12 +10,12 @@ namespace MachineSpec
     {
         //Variables
         protected string name;
-        protected string price;
+        protected double price;
 
         //Method
         public override string ToString()
         {
-            return "$" + price + ", " + name;
+            return "$" + price + "\t" + name;
         }
 
         //Getters/Setters
@@ -25,7 +25,7 @@ namespace MachineSpec
             set { name = value; }
         }
 
-        public string Price
+        public double Price
         {
             get { return price; }
             set { price = value; }
