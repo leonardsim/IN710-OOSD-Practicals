@@ -21,7 +21,9 @@ namespace MachineSpec
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (rdoGame.Checked == false && rdoBusiness.Checked == false && rdoMulti.Checked == false)
+            // BAD ARCHITECTURAL DESIGN
+            // Have to constantly change if statements if new classes are added
+            if (rdoGame.Checked == false && rdoBusiness.Checked == false && rdoMulti.Checked == false && rdoLaptop.Checked == false)
             {
                 MessageBox.Show("Please select a machine type");
             } 
@@ -33,6 +35,8 @@ namespace MachineSpec
                     currMachineMaker = new BusinessMachineMaker();
                 else if (rdoMulti.Checked)
                     currMachineMaker = new MultimediaMachineMaker();
+                else if (rdoLaptop.Checked)
+                    currMachineMaker = new LaptopMachineMaker();
 
                 MachineSpecPrinter currSpecPrinter = new MachineSpecPrinter(currMachineMaker, listBox1);
                 currSpecPrinter.printSpec();

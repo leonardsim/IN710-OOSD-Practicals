@@ -34,6 +34,7 @@
             this.rdoMulti = new System.Windows.Forms.RadioButton();
             this.rdoBusiness = new System.Windows.Forms.RadioButton();
             this.rdoGame = new System.Windows.Forms.RadioButton();
+            this.rdoLaptop = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,13 +58,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdoLaptop);
             this.groupBox1.Controls.Add(this.rdoMulti);
             this.groupBox1.Controls.Add(this.rdoBusiness);
             this.groupBox1.Controls.Add(this.rdoGame);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 91);
+            this.groupBox1.Location = new System.Drawing.Point(12, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(109, 95);
+            this.groupBox1.Size = new System.Drawing.Size(109, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Machine Type";
@@ -101,6 +103,17 @@
             this.rdoGame.Text = "Game";
             this.rdoGame.UseVisualStyleBackColor = true;
             // 
+            // rdoLaptop
+            // 
+            this.rdoLaptop.AutoSize = true;
+            this.rdoLaptop.Location = new System.Drawing.Point(7, 92);
+            this.rdoLaptop.Name = "rdoLaptop";
+            this.rdoLaptop.Size = new System.Drawing.Size(58, 17);
+            this.rdoLaptop.TabIndex = 3;
+            this.rdoLaptop.TabStop = true;
+            this.rdoLaptop.Text = "Laptop";
+            this.rdoLaptop.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +138,7 @@
         private System.Windows.Forms.RadioButton rdoMulti;
         private System.Windows.Forms.RadioButton rdoBusiness;
         private System.Windows.Forms.RadioButton rdoGame;
+        private System.Windows.Forms.RadioButton rdoLaptop;
     }
 }
 
