@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace BicycleDash
 {
-    class KilometerObserver : BicycleObserver
+    public class KilometerObserver : BicycleObserver
     {
         //Constructor
         public KilometerObserver(Label displayLabel, SpeedMonitorSubject bikeSubject)
@@ -19,7 +19,7 @@ namespace BicycleDash
         //Methods
         public override void Update(int currentRPM)
         {
-            currentComputedValue = (currentRPM / (1 / 0.205)) / (60);
+            currentComputedValue = (((double)currentRPM * 60 * 205) / 10000);
         }
     }
 }

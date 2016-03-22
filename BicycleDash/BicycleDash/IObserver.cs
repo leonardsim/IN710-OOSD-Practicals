@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BicycleDash
 {
-    interface IObserver
+    public interface IObserver
     {
         void Update(int data);
         void Display();

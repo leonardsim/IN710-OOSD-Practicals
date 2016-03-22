@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace BicycleDash
 {
-    class RPMObserver : BicycleObserver
+    public class RPMObserver : BicycleObserver
     {
         //Constructor
         public RPMObserver(Label displayLabel, SpeedMonitorSubject bikeSubject) 

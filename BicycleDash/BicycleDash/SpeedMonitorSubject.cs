@@ -19,10 +19,31 @@ namespace BicycleDash
             observerList = new List<IObserver>();
         }
 
-        //Method
+        //Methods
         public void AddObserver(IObserver o)
         {
             observerList.Add(o);
+        }
+
+        public void RemoveObserver(IObserver o)
+        {
+            observerList.Remove(o);
+        }
+
+        public void NotifyObservers()
+        {
+            foreach (BicycleObserver currentObserver in observerList)
+            {
+                currentObserver.Update(currentRPM);
+                currentObserver.Display();
+            }
+        }
+
+        //Getter/Setter
+        public int CurrentRPM
+        {
+            get { return currentRPM; }
+            set { currentRPM = value; }
         }
     }
 }

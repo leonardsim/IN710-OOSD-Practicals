@@ -31,7 +31,7 @@ namespace BicycleDash
         //Methods
         public abstract void Update(int currentRPM);
         
-        public virtual void DisplayData()
+        public virtual void Display()
         {
             displayLabel.Text = currentComputedValue.ToString("F2");
         }

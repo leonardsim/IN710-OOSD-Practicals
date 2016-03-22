@@ -86,6 +86,7 @@
             this.Button1.TabIndex = 7;
             this.Button1.Text = "Calculate";
             this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // lblCalories
             // 
