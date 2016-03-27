@@ -35,6 +35,14 @@ namespace WeatherStation
             weatherList.Remove(o);
         }
 
+        public void NotifyObservers(IObserver o)
+        {
+            foreach (WeatherObserver currentObserver in weatherList)
+            {
+
+            }
+        }
+
         //Getters/Setters
         public int CurrentTemp
         {
