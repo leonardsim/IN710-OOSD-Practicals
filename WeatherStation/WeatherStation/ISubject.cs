@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-    interface ISubject
+    public interface ISubject
     {
+        void AddObservers(IObserver o);
+        void RemoveObservers(IObserver o);
+        void NotifyObservers();
     }
 }
