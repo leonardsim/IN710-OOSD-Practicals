@@ -24,6 +24,12 @@ namespace WeatherStation
             weatherList = new List<IObserver>();
         }
 
+        //Interface methods
+        public void AddObservers(IObserver o)
+        {
+            weatherList.Add(o);
+        }
+
         //Getters/Setters
         public int CurrentTemp
         {
