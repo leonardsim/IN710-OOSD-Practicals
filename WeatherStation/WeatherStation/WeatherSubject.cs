@@ -30,6 +30,11 @@ namespace WeatherStation
             weatherList.Add(o);
         }
 
+        public void RemoveObservers(IObserver o)
+        {
+            weatherList.Remove(o);
+        }
+
         //Getters/Setters
         public int CurrentTemp
         {
