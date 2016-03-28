@@ -20,6 +20,7 @@ namespace WeatherStation
         }
 
         //Methods
+        // Saves a message and message generated depends on temperature and humidity entered
         public override void Update(int currentTemp, int curentHumidity, int currentPressure)
         {
             // Checks temperature range and adds a message to string
@@ -59,6 +60,13 @@ namespace WeatherStation
             }
         }
 
+        // Overriden Display method to display the string text
+        public override void Display()
+        {
+            // Clears the list box
+            lb.Items.Clear();
 
+            lb.Items.Add(weatherStr);
+        }
     }
 }
