@@ -23,9 +23,25 @@ namespace SocialNetworking
         }
 
         //Methods
+        // Adds observer to the list
         public void AddObserver(IObserver o)
         {
             socialList.Add(o);
+        }
+
+        // Removes observer from the list
+        public void RemoveObserver(IObserver o)
+        {
+            socialList.Remove(o);
+        }
+
+        // Calls the observer's update and display methods
+        public void NotifyObservers()
+        {
+            foreach (SocialObserver currentObserver in socialList)
+            {
+
+            }
         }
 
         //Getters/Setters
