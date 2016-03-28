@@ -34,6 +34,11 @@ namespace WeatherStation
             subject.AddObservers(this);
         }
 
+        // Interface Methods
+        // Update method is made abstract so that sub-classes can use method polymorphically  
+        public abstract void Update(int currentTemp, int curentHumidity, int currentPressure);
+
+
         //Getters/Setters
         // Current Readings
         public int CurrentTemp
