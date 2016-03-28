@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-    interface IObserver
+    public interface IObserver
     {
+        void Update(int currentTemp, int currentHumidity, int currentPressure);
+        void Display();
     }
 }
