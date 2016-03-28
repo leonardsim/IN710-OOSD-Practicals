@@ -9,6 +9,7 @@ namespace WeatherUnitTesting
     [TestClass]
     public class WeatherUnitTest
     {
+        // Tests to see if it returns expected average value
         [TestMethod]
         public void Update_AvgReadings_ReturnExpectedValue()
         {
@@ -25,6 +26,7 @@ namespace WeatherUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
+        // Tests to see if it returns expected message 
         [TestMethod]
         public void Update_ForecastReading_ReturnExpectedValue()
         {
@@ -36,6 +38,22 @@ namespace WeatherUnitTesting
 
             string expected = "Temperature is just right. Optimum humidity!";
             string actual = fO.WeatherStr;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        // Tests to see if it returns expected temperature value
+        [TestMethod]
+        public void Update_CurrentTemperatureReading_ReturnExpectedValue()
+        {
+            ListBox lb = new ListBox();
+            WeatherSubject subject = new WeatherSubject();
+            CurrentObserver cO = new CurrentObserver(lb, subject);
+
+            cO.Update(20, 50, 1000);
+
+            double expected = 20;
+            double actual = cO.ComputedTemp;
 
             Assert.AreEqual(expected, actual);
         }
