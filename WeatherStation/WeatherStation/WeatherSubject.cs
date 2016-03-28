@@ -39,7 +39,8 @@ namespace WeatherStation
         {
             foreach (WeatherObserver currentObserver in weatherList)
             {
-
+                currentObserver.Update(currentTemp, currentHumidity, currentPressure);
+                currentObserver.Display();
             }
         }
 
