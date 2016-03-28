@@ -68,5 +68,12 @@ namespace WeatherStation
 
             lb.Items.Add(weatherStr);
         }
+
+        //Getter/Setter
+        public string WeatherStr
+        {
+            get { return weatherStr; }
+            set { weatherStr = value; }
+        }
     }
 }
