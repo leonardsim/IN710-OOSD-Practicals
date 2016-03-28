@@ -35,7 +35,7 @@ namespace WeatherStation
             weatherList.Remove(o);
         }
 
-        public void NotifyObservers(IObserver o)
+        public void NotifyObservers()
         {
             foreach (WeatherObserver currentObserver in weatherList)
             {
