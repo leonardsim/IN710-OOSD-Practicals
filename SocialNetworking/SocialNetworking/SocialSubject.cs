@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SocialNetworking
 {
+    public class SocialSubject : ISubject
     {
         //Attributes
         private List<IObserver> socialList;
@@ -19,6 +20,12 @@ namespace SocialNetworking
             socialList = new List<IObserver>();
             userStatus = "";
             timeStamp = DateTime.Now;
+        }
+
+        //Methods
+        public void AddObserver(IObserver o)
+        {
+            socialList.Add(o);
         }
 
         //Getters/Setters
