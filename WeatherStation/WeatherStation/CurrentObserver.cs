@@ -15,5 +15,14 @@ namespace WeatherStation
         {
 
         }
+
+        //Method
+        // Prints the user's most current input to the list box
+        public override void Update(int currentTemp, int currentHumidity, int currentPressure)
+        {
+            computedTemp = currentTemp;
+            computedHumidity = currentHumidity;
+            computedPressure = currentPressure;
+        }
     }
 }
