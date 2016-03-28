@@ -40,7 +40,8 @@ namespace SocialNetworking
         {
             foreach (SocialObserver currentObserver in socialList)
             {
-
+                currentObserver.Update(userStatus);
+                currentObserver.Display();
             }
         }
 
