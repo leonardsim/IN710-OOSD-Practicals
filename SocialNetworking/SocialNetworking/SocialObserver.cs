@@ -28,6 +28,19 @@ namespace SocialNetworking
             ss.AddObserver(this);
         }
 
+        //Methods
+        public virtual void Update(string userInput)
+        {
+            currentStatus = userInput;
+            currentTimeStamp = DateTime.Now;
+        }
+
+        public virtual void Display()
+        {
+            lb.Items.Add("Status: " + currentStatus);
+        }
+ 
+
         //Getter/Setter
         public string CurrentStatus
         {
