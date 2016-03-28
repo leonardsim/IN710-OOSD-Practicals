@@ -6,7 +6,26 @@ using System.Threading.Tasks;
 
 namespace SocialNetworking
 {
-    class SocialSubject
     {
+        //Attributes
+        private List<IObserver> socialList;
+        private string userStatus;
+        private DateTime timeStamp;
+
+        //Constructor
+        public SocialSubject()
+        {
+            //Initialise attributes
+            socialList = new List<IObserver>();
+            userStatus = "";
+            timeStamp = DateTime.Now;
+        }
+
+        //Getters/Setters
+        public string UserStatus
+        {
+            get { return userStatus; }
+            set { userStatus = value; }
+        }
     }
 }
