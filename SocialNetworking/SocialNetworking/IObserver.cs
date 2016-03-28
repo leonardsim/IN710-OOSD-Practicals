@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocialNetworking
 {
-    class IObserver
+    public class IObserver
     {
+        void Update(string status);
+        void Display();
     }
 }
