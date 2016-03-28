@@ -24,5 +24,20 @@ namespace WeatherUnitTesting
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Update_ForecastReading_ReturnExpectedValue()
+        {
+            ListBox lb = new ListBox();
+            WeatherSubject subject = new WeatherSubject();
+            ForecastObserver fO = new ForecastObserver(lb, subject);
+
+            fO.Update(20, 50, 1000);
+
+            string expected = "Temperature is just right. Optimum humidity!";
+            string actual = fO.WeatherStr;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
