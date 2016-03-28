@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SocialNetworking
 {
-    public abstract class SocialObserver : IObserver
+    public class SocialObserver : IObserver
     {
         //Attributes
         protected string currentStatus;
