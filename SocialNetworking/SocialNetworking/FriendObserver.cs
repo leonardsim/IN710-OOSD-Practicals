@@ -21,7 +21,7 @@ namespace SocialNetworking
         public override void Display()
         {
             string format = "ddd d MMM, yyyy HH:mm";
-            lb.Items.Add(currentTimeStamp.ToString(format);
+            lb.Items.Add(currentTimeStamp.ToString(format));
             lb.Items.Add(" \"" + currentStatus + "\"");
         }
     }
