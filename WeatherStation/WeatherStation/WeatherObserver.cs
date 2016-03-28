@@ -38,6 +38,17 @@ namespace WeatherStation
         // Update method is made abstract so that sub-classes can use method polymorphically  
         public abstract void Update(int currentTemp, int curentHumidity, int currentPressure);
 
+        // Default display for CurrentReading and AverageReading
+        // ForeCast will need to override this method to display differently
+        public virtual void Display()
+        {
+            // Clears the listbox first
+            lb.Items.Clear();
+
+            lb.Items.Add("Temperature: \t" + computedTemp.ToString("F2"));
+            lb.Items.Add("Humidity: \t" + computedHumidity.ToString("F2"));
+            lb.Items.Add("Pressure: \t" + computedPressure.ToString("F2"));
+        }
 
         //Getters/Setters
         // Current Readings
