@@ -39,9 +39,9 @@ namespace WeatherStation
             runningPressure += currentPressure;
 
             // Average the running values 
-            computedTemp = (runningTemp / avgCount);
-            computedHumidity = (runningHumidity / avgCount);
-            computedPressure = (runningPressure / avgCount);
+            computedTemp = ((double)runningTemp / avgCount);
+            computedHumidity = ((double)runningHumidity / avgCount);
+            computedPressure = ((double)runningPressure / avgCount);
         }
     }
 }
