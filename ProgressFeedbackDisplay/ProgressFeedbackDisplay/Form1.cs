@@ -26,5 +26,11 @@ namespace ProgressFeedbackDisplay
         {
             numericUpDown1.Value++;
         }
+
+        // Will update the progress bar
+        public void updateProgressBar()
+        {
+            progressBar1.PerformStep();
+        }
     }
 }
