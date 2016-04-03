@@ -16,5 +16,12 @@ namespace GardenReporter2016
         {
             gardenList = new List<Garden>();
         }
+
+        //Method
+        // Adds garden to the gardenList
+        public void AddGarden(Garden garden)
+        {
+            gardenList.Add(garden);
+        }
     }
 }
