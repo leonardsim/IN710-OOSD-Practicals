@@ -119,6 +119,7 @@
             this.txtCorrect.Name = "txtCorrect";
             this.txtCorrect.Size = new System.Drawing.Size(100, 20);
             this.txtCorrect.TabIndex = 8;
+            this.txtCorrect.Text = "5";
             // 
             // txtIncorrect
             // 
@@ -126,6 +127,7 @@
             this.txtIncorrect.Name = "txtIncorrect";
             this.txtIncorrect.Size = new System.Drawing.Size(100, 20);
             this.txtIncorrect.TabIndex = 9;
+            this.txtIncorrect.Text = "2";
             // 
             // Form1
             // 
