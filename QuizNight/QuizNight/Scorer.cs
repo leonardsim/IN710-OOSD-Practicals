@@ -21,5 +21,17 @@ namespace QuizNight
 
             return score;
         }
+
+        // Returns the child score
+        public static int ChildScore(int correct, int incorrect)
+        {
+            // declare and inititalise score
+            int score = 0;
+
+            // For every correct answer multiply score by 15
+            score = ((correct * 15));
+
+            return score;
+        }
     }
 }
