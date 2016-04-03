@@ -12,9 +12,19 @@ namespace ProgressFeedbackDisplay
 {
     public partial class Form1 : Form
     {
+        //Declare delegate
+        public delegate void FeedbackDelegate();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        //Methods
+        // Will increase the numeric value of the spinbox
+        public void updateSpinBox()
+        {
+            numericUpDown1.Value++;
         }
     }
 }
