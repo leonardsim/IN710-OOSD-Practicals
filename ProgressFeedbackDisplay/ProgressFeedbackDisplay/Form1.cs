@@ -26,6 +26,8 @@ namespace ProgressFeedbackDisplay
         // Will increase the numeric value of the spinbox
         public void updateSpinBox()
         {
+            // Automatically update the visual state by forcing the screen to redraw
+            Application.DoEvents();
             numericUpDown1.Value++;
         }
 
