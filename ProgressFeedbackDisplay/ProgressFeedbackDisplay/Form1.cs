@@ -32,5 +32,11 @@ namespace ProgressFeedbackDisplay
         {
             progressBar1.PerformStep();
         }
+
+        // Will update the trackbar
+        public void updateTrackBar()
+        {
+            trackBar1.Value++;
+        }
     }
 }
