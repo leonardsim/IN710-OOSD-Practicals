@@ -51,5 +51,10 @@ namespace QuizNight
             // Set the result to the score label
             lblScore.Text = "Score: " + result;
         }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            DelegateScore();
+        }
     }
 }
