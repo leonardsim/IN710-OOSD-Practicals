@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizNight
 {
-    class Scorer
+    public static class Scorer
     {
     }
 }
