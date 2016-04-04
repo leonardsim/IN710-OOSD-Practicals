@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnRand = new System.Windows.Forms.Button();
-            this.btnEven = new System.Windows.Forms.Button();
+            this.btnOdd = new System.Windows.Forms.Button();
             this.btnTen = new System.Windows.Forms.Button();
             this.lbRand = new System.Windows.Forms.ListBox();
             this.lbResult = new System.Windows.Forms.ListBox();
@@ -45,15 +45,15 @@
             this.btnRand.UseVisualStyleBackColor = true;
             this.btnRand.Click += new System.EventHandler(this.btnRand_Click);
             // 
-            // btnEven
+            // btnOdd
             // 
-            this.btnEven.Location = new System.Drawing.Point(257, 13);
-            this.btnEven.Name = "btnEven";
-            this.btnEven.Size = new System.Drawing.Size(146, 35);
-            this.btnEven.TabIndex = 1;
-            this.btnEven.Text = "Select Even Numbers";
-            this.btnEven.UseVisualStyleBackColor = true;
-            this.btnEven.Click += new System.EventHandler(this.btnEven_Click);
+            this.btnOdd.Location = new System.Drawing.Point(257, 13);
+            this.btnOdd.Name = "btnOdd";
+            this.btnOdd.Size = new System.Drawing.Size(146, 35);
+            this.btnOdd.TabIndex = 1;
+            this.btnOdd.Text = "Select Odd Numbers";
+            this.btnOdd.UseVisualStyleBackColor = true;
+            this.btnOdd.Click += new System.EventHandler(this.btnEven_Click);
             // 
             // btnTen
             // 
@@ -89,7 +89,7 @@
             this.Controls.Add(this.lbResult);
             this.Controls.Add(this.lbRand);
             this.Controls.Add(this.btnTen);
-            this.Controls.Add(this.btnEven);
+            this.Controls.Add(this.btnOdd);
             this.Controls.Add(this.btnRand);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -100,7 +100,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnRand;
-        private System.Windows.Forms.Button btnEven;
+        private System.Windows.Forms.Button btnOdd;
         private System.Windows.Forms.Button btnTen;
         private System.Windows.Forms.ListBox lbRand;
         private System.Windows.Forms.ListBox lbResult;
