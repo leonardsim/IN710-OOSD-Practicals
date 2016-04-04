@@ -48,11 +48,13 @@ namespace GardenReporter2016
         private void btnArea_Click(object sender, EventArgs e)
         {
             /* YOUR CODE HERE */
+            gardenManager.ProcessGardens(gardenManager.GD, listBox1, btnArea);
         }
 
         private void btnCharges_Click(object sender, EventArgs e)
         {
             /* YOUR CODE HERE */
+            gardenManager.ProcessGardens(gardenManager.GD, listBox1, btnCharges);
         }
     }
 }
