@@ -43,6 +43,7 @@
             this.btnRand.TabIndex = 0;
             this.btnRand.Text = "Generate Random ";
             this.btnRand.UseVisualStyleBackColor = true;
+            this.btnRand.Click += new System.EventHandler(this.btnRand_Click);
             // 
             // btnEven
             // 
@@ -52,6 +53,7 @@
             this.btnEven.TabIndex = 1;
             this.btnEven.Text = "Select Even Numbers";
             this.btnEven.UseVisualStyleBackColor = true;
+            this.btnEven.Click += new System.EventHandler(this.btnEven_Click);
             // 
             // btnTen
             // 
@@ -61,6 +63,7 @@
             this.btnTen.TabIndex = 2;
             this.btnTen.Text = "Select Numbers < 10";
             this.btnTen.UseVisualStyleBackColor = true;
+            this.btnTen.Click += new System.EventHandler(this.btnTen_Click);
             // 
             // lbRand
             // 
