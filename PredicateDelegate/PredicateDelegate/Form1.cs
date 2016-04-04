@@ -25,6 +25,16 @@ namespace PredicateDelegate
             rand = new Random();
         }
 
+        //Method
+        // Checks to see if the input is an odd number
+        private bool isOdd(int inputInteger)
+        {
+            bool isAnOddNumber = ((inputInteger % 2) == 1);
+            return isAnOddNumber;
+        }
+
+        
+
         private void btnRand_Click(object sender, EventArgs e)
         {
 
