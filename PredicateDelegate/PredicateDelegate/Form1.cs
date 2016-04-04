@@ -33,7 +33,22 @@ namespace PredicateDelegate
             return isAnOddNumber;
         }
 
-        
+        // Checks to see if the input is less than 10
+        private bool isLessThan(int inputInteger)
+        {
+            bool isLessThanTen;
+
+            if (inputInteger < 10)
+            {
+                isLessThanTen = true;
+            }
+            else
+            {
+                isLessThanTen = false;
+            }
+
+            return isLessThanTen;
+        }
 
         private void btnRand_Click(object sender, EventArgs e)
         {
