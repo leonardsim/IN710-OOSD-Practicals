@@ -18,6 +18,7 @@ namespace FireAlarm
 
             FireAlarmSubject.FireEventHandler handler = new FireAlarmSubject.FireEventHandler(FireAlarmHandlerMethod);
 
+            // Observer gets added to the subject
             sub.FireEvent += handler;
         }
 
