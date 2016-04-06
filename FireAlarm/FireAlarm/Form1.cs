@@ -15,6 +15,7 @@ namespace FireAlarm
         // Declare subject & observers
         FireAlarmSubject subject;
         InstructionObserver obI;
+        BeepObserver obB;
 
         // Declare enum
         EFireCategory currFC;
@@ -26,6 +27,7 @@ namespace FireAlarm
             // Instantiate them
             subject = new FireAlarmSubject();
             obI = new InstructionObserver(subject);
+            obB = new BeepObserver(subject);
         }
 
         private void btnAlarm_Click(object sender, EventArgs e)
