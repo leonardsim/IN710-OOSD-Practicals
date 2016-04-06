@@ -11,9 +11,19 @@ namespace FireAlarm
         // Declare delegate
         public delegate void FireEventHandler(object fireSubject, FireEventArgs fe);
         
-        // Declare event
+        // Declare event (Bind to the delegate type)
         public event FireEventHandler FireEvent;
 
-        
+        // Method
+        public void OnFireEvent(EFireCategory fCat)
+        {
+            // Instantiate the custom event
+            FireEventArgs fe = new FireEventArgs(fCat);
+
+            if (FireEvent != null)
+            {
+                FireEvent(this, fe);
+            }
+        }
     }
 }
