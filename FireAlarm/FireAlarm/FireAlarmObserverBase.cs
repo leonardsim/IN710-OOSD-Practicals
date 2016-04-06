@@ -16,7 +16,12 @@ namespace FireAlarm
         {
             this.sub = sub;
 
-            FireAlarmSubject.FireEventHandler handler = new FireAlarmSubject.FireEventHandler();
+            FireAlarmSubject.FireEventHandler handler = new FireAlarmSubject.FireEventHandler(FireAlarmHandlerMethod);
+
+            sub.FireEvent += handler;
         }
+
+        // Method 
+        public abstract void FireAlarmHandlerMethod(object fireSubject, FireEventArgs fa);
     }
 }
