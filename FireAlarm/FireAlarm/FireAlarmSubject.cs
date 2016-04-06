@@ -20,8 +20,10 @@ namespace FireAlarm
             // Instantiate the custom event
             FireEventArgs fe = new FireEventArgs(fCat);
 
+            // Is null if no methods have been registered
             if (FireEvent != null)
             {
+                // Raise the event
                 FireEvent(this, fe);
             }
         }
