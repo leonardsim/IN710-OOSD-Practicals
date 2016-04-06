@@ -30,9 +30,9 @@
         {
             this.btnAlarm = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoMinor = new System.Windows.Forms.RadioButton();
-            this.rdoSerious = new System.Windows.Forms.RadioButton();
             this.rdoInferno = new System.Windows.Forms.RadioButton();
+            this.rdoSerious = new System.Windows.Forms.RadioButton();
+            this.rdoMinor = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,7 @@
             this.btnAlarm.TabIndex = 0;
             this.btnAlarm.Text = "Fire Alarm";
             this.btnAlarm.UseVisualStyleBackColor = true;
+            this.btnAlarm.Click += new System.EventHandler(this.btnAlarm_Click);
             // 
             // groupBox1
             // 
@@ -58,16 +59,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fire Category";
             // 
-            // rdoMinor
+            // rdoInferno
             // 
-            this.rdoMinor.AutoSize = true;
-            this.rdoMinor.Location = new System.Drawing.Point(7, 29);
-            this.rdoMinor.Name = "rdoMinor";
-            this.rdoMinor.Size = new System.Drawing.Size(79, 29);
-            this.rdoMinor.TabIndex = 0;
-            this.rdoMinor.TabStop = true;
-            this.rdoMinor.Text = "Minor";
-            this.rdoMinor.UseVisualStyleBackColor = true;
+            this.rdoInferno.AutoSize = true;
+            this.rdoInferno.Location = new System.Drawing.Point(7, 99);
+            this.rdoInferno.Name = "rdoInferno";
+            this.rdoInferno.Size = new System.Drawing.Size(90, 29);
+            this.rdoInferno.TabIndex = 2;
+            this.rdoInferno.TabStop = true;
+            this.rdoInferno.Text = "Inferno";
+            this.rdoInferno.UseVisualStyleBackColor = true;
             // 
             // rdoSerious
             // 
@@ -80,16 +81,16 @@
             this.rdoSerious.Text = "Serious";
             this.rdoSerious.UseVisualStyleBackColor = true;
             // 
-            // rdoInferno
+            // rdoMinor
             // 
-            this.rdoInferno.AutoSize = true;
-            this.rdoInferno.Location = new System.Drawing.Point(7, 99);
-            this.rdoInferno.Name = "rdoInferno";
-            this.rdoInferno.Size = new System.Drawing.Size(90, 29);
-            this.rdoInferno.TabIndex = 2;
-            this.rdoInferno.TabStop = true;
-            this.rdoInferno.Text = "Inferno";
-            this.rdoInferno.UseVisualStyleBackColor = true;
+            this.rdoMinor.AutoSize = true;
+            this.rdoMinor.Location = new System.Drawing.Point(7, 29);
+            this.rdoMinor.Name = "rdoMinor";
+            this.rdoMinor.Size = new System.Drawing.Size(79, 29);
+            this.rdoMinor.TabIndex = 0;
+            this.rdoMinor.TabStop = true;
+            this.rdoMinor.Text = "Minor";
+            this.rdoMinor.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
