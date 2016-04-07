@@ -87,7 +87,7 @@ namespace PetrolBot
                 shipLocation.X = shipLocation.X + shipVelocity.X;
                 shipLocation.Y = shipLocation.Y + shipVelocity.Y;
 
-                Petrol -= 5;
+                usePetrol();
             }
             else
             {
@@ -97,19 +97,32 @@ namespace PetrolBot
 
         public void OnFullOfFuelEvent()
         {
+            ShipEventArgs e = new ShipEventArgs(shipLocation);
 
+            if (FullOfFuelEvent != null)
+            {
+                FullOfFuelEvent(this, e);
+            }
         }
 
         public void OnOutOfFuelEvent()
         {
+            ShipEventArgs e = new ShipEventArgs(shipLocation);
 
+            if (OutOfFuelEvent != null)
+            {
+                OutOfFuelEvent(this, e);
+            }
         }
 
         public void refuel()
         {
             if (Petrol == 0)
             {
-
+                while (Petrol != 255)
+                {
+                    Petrol++;
+                }
             }
         }
 
@@ -121,7 +134,10 @@ namespace PetrolBot
 
         public void usePetrol()
         {
-
+            if (Petrol != 0)
+            {
+                Petrol -= 5;
+            }
         }
     }
 }
