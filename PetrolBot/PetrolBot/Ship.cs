@@ -10,7 +10,8 @@ namespace PetrolBot
     public class Ship
     {
         //Const
-        const int SHIP_SIZE = 30; 
+        const int SHIP_SIZE = 30;
+        const int PETROL_VAL = 100;
         const int MIN_SPEED = 5;
         const int MAX_SPEED = 20; 
 
@@ -43,7 +44,7 @@ namespace PetrolBot
             this.rGen = rGen;
 
             // Set petrol value
-            Petrol = rGen.Next(50, 101);
+            Petrol = PETROL_VAL;
 
             // Set ship location
             // set fix position for now
@@ -75,7 +76,6 @@ namespace PetrolBot
 
         public void moveShip(Rectangle boundsRectangle)
         {
-
             if (Petrol != 0)
             {
                 // Changes the velocity direction by flipping the values (positive/negative)
@@ -94,10 +94,6 @@ namespace PetrolBot
 
                 usePetrol();
             }
-            else
-            {
-
-            }
         }
 
         public void OnFullOfFuelEvent()
@@ -110,9 +106,9 @@ namespace PetrolBot
             }
         }
 
-        public void OnOutOfFuelEvent()
+        public void OnOutOfFuelEvent(Point currShipLocation)
         {
-            ShipEventArgs e = new ShipEventArgs(shipLocation);
+            ShipEventArgs e = new ShipEventArgs(currShipLocation);
 
             if (OutOfFuelEvent != null)
             {
@@ -124,7 +120,7 @@ namespace PetrolBot
         {
             if (Petrol == 0)
             {
-                while (Petrol != 255)
+                while (Petrol != PETROL_VAL)
                 {
                     Petrol++;
                 }

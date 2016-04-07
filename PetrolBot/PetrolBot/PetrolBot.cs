@@ -21,13 +21,17 @@ namespace PetrolBot
         Point shipLocation;
 
         //Constructor
-        public PetrolBot(Graphics botCanvas, Color botColor, Point botStartingLocation)
+        public PetrolBot(Graphics botCanvas, Color botColor, Point botStartingLocation, Ship botShip)
         {
             this.botCanvas = botCanvas;
             this.botColor = botColor;
+            this.botStartingLocation = botStartingLocation;
+            this.botShip = botShip;
             botCurrentLocation = botStartingLocation;
 
+            Ship.FuelEventHandler handler = new Ship.FuelEventHandler(OutOfFuelEventHandler);
 
+            botShip.OutOfFuelEvent += handler;
         }
 
         //Methods
@@ -39,14 +43,23 @@ namespace PetrolBot
             botCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, PETROL_SIZE, PETROL_SIZE);
         }
 
-        public void FullOfFuelEventHandler()
+        public void FullOfFuelEventHandler(object sender, ShipEventArgs e)
         {
 
         }
 
-        public void OutOfFuelEventHandler()
+        public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
         {
+            if (botShip.Petrol == 0)
+            {
+                botCurrentLocation.X = botShip.ShipLocation.X;
+                botCurrentLocation.Y = botShip.ShipLocation.Y;
 
+                botShip.refuel();
+            }
+
+            botCurrentLocation.X = botStartingLocation.X;
+            botCurrentLocation.Y = botStartingLocation.Y;
         }
 
     }
