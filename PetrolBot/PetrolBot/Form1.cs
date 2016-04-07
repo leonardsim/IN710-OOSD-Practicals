@@ -13,6 +13,7 @@ namespace PetrolBot
     public partial class Form1 : Form
     {
         //Attributes
+        Rectangle boundsRectangle;
         Graphics mainCanvas;
         Brush backgroundBrush;
         Brush petrolBackground;
@@ -30,6 +31,7 @@ namespace PetrolBot
             rand = new Random();
             backgroundBrush = new SolidBrush(Color.Gray);
             petrolBackground = new SolidBrush(Color.Black);
+            boundsRectangle = new Rectangle(0, 0, Width, 500);
             shipList = new List<Ship>();
             petrolList = new List<PetrolBot>();
 
@@ -40,20 +42,22 @@ namespace PetrolBot
             //Add to Ship List
             shipList.Add(s1);
             shipList.Add(s2);
-            timer1.Enabled = true;
+
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             // Draw the background
-            mainCanvas.FillRectangle(backgroundBrush, 0, 0, 600, 600);
+            mainCanvas.FillRectangle(backgroundBrush, 0, 0, 600, 500);
             mainCanvas.FillRectangle(petrolBackground, 0, 500, 600, 200);
 
             // Draws the ship
             foreach (Ship s in shipList)
             {
-                s.drawShip();
+                s.ShipCycle(boundsRectangle);
             }
+
         }
     }
 }
