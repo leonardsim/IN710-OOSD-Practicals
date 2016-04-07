@@ -9,6 +9,9 @@ namespace PetrolBot
 {
     public class PetrolBot
     {
+        //Const
+        const int PETROL_SIZE = 10;
+
         //Attributes
         Graphics botCanvas;
         Color botColor;
@@ -18,17 +21,22 @@ namespace PetrolBot
         Point shipLocation;
 
         //Constructor
-        public PetrolBot(Graphics botCanvas, Color botColor, Ship botShip)
+        public PetrolBot(Graphics botCanvas, Color botColor, Point botStartingLocation)
         {
             this.botCanvas = botCanvas;
             this.botColor = botColor;
-            this.botShip = botShip;
+            botCurrentLocation = botStartingLocation;
+
+
         }
 
         //Methods
         public void drawBot()
         {
+            // Set brush colour
+            Brush botBrush = new SolidBrush(botColor);
 
+            botCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, PETROL_SIZE, PETROL_SIZE);
         }
 
         public void FullOfFuelEventHandler()
