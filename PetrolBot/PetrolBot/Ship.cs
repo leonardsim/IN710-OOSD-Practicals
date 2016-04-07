@@ -10,7 +10,7 @@ namespace PetrolBot
     public class Ship
     {
         //Const
-        const int SHIP_SIZE = 50;
+        const int SHIP_SIZE = 30;
 
         // Declare delegate
         public delegate void FuelEventHandler(object sender, ShipEventArgs e);
@@ -41,7 +41,7 @@ namespace PetrolBot
 
             // Set ship location
             // set fix position for now
-            ShipLocation = new Point(100, 100);
+            ShipLocation = new Point(100 + rGen.Next(50), 100 + rGen.Next(50));
 
             // Set ship color as black
             shipColor = Color.FromArgb(0, 0, 0);
