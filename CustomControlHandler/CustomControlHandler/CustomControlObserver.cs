@@ -18,6 +18,10 @@ namespace CustomControlHandler
         {
             this.button = button;
             this.codeNum = codeNum;
+
+            // Create event handler delegate and bind the method to it
+            EventHandler handler = new EventHandler(CustomControlHandlerMethod);
+
         }
 
         //Method to pass into delegate event handler
