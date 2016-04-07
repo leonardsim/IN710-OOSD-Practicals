@@ -12,6 +12,14 @@ namespace PetrolBot
         //Const
         const int SHIP_SIZE = 50;
 
+        // Declare delegate
+        public delegate void FuelEventHandler(object sender, ShipEventArgs e);
+
+        // Declare events
+        public event FuelEventHandler OutOfFuelEvent;
+        public event FuelEventHandler FullOfFuelEvent;
+
+
         // Declare enum
         public enum EShipState { wandering, refueling }
 
