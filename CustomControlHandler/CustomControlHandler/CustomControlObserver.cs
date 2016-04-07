@@ -22,6 +22,8 @@ namespace CustomControlHandler
             // Create event handler delegate and bind the method to it
             EventHandler handler = new EventHandler(CustomControlHandlerMethod);
 
+            // The handler will be added to the event 'Click'
+            button.Click += handler; 
         }
 
         //Method to pass into delegate event handler
