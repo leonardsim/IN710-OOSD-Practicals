@@ -51,7 +51,15 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgressBarObserver.cs" />
+    <Compile Include="ProgressEventObserverBase.cs" />
+    <Compile Include="ProgressEventSubject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpinBoxObserver.cs" />
+    <Compile Include="TrackBarObserver.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

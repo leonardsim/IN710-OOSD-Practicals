@@ -20,13 +20,18 @@ namespace ProgressEvent
 
         public Form1()
         {
+            InitializeComponent();
+
             // Instantiate them
             subject = new ProgressEventSubject();
-            spO = new SpinBoxObserver(subject, numericUpDown1);
             pbO = new ProgressBarObserver(subject, progressBar1);
+            spO = new SpinBoxObserver(subject, numericUpDown1, this);
             tbO = new TrackBarObserver(subject, trackBar1);
+        }
 
-            InitializeComponent();
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            subject.SlowMethod();
         }
     }
 }
