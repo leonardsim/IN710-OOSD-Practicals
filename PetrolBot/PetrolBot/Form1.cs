@@ -21,7 +21,6 @@ namespace PetrolBot
         List<PetrolBot> petrolList;
         Random rand;
  
-
         public Form1()
         {
             InitializeComponent();
@@ -42,19 +41,19 @@ namespace PetrolBot
             Ship s4 = new Ship(mainCanvas, rand);
             Ship s5 = new Ship(mainCanvas, rand);
 
-            //Inititalise PetrolBot
-            PetrolBot b1 = new PetrolBot(mainCanvas, Color.Blue, new Point(50, 525), s1);
-            PetrolBot b2 = new PetrolBot(mainCanvas, Color.Pink, new Point(100, 525), s2);
-            PetrolBot b3 = new PetrolBot(mainCanvas, Color.Green, new Point(150, 525), s3);
-            PetrolBot b4 = new PetrolBot(mainCanvas, Color.Yellow, new Point(200, 525), s4);
-            PetrolBot b5 = new PetrolBot(mainCanvas, Color.Brown, new Point(250, 525), s5);
-
             //Add to Ship List
             shipList.Add(s1);
             shipList.Add(s2);
             shipList.Add(s3);
             shipList.Add(s4);
             shipList.Add(s5);
+
+            //Inititalise PetrolBot
+            PetrolBot b1 = new PetrolBot(mainCanvas, Color.Blue, new Point(50, 525), s1);
+            PetrolBot b2 = new PetrolBot(mainCanvas, Color.Pink, new Point(100, 525), s2);
+            PetrolBot b3 = new PetrolBot(mainCanvas, Color.Green, new Point(150, 525), s3);
+            PetrolBot b4 = new PetrolBot(mainCanvas, Color.Yellow, new Point(200, 525), s4);
+            PetrolBot b5 = new PetrolBot(mainCanvas, Color.Brown, new Point(250, 525), s5);
 
             //Add to PetrolBot List
             petrolList.Add(b1);
