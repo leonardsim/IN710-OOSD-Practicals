@@ -42,6 +42,9 @@ namespace PetrolBot
             this.shipCanvas = shipCanvas;
             this.rGen = rGen;
 
+            // Set petrol value
+            Petrol = 255;
+
             // Set ship location
             // set fix position for now
             shipLocation = new Point(100 + rGen.Next(50), 100 + rGen.Next(50));
@@ -57,7 +60,7 @@ namespace PetrolBot
         public void drawShip()
         {
             // Set ship colour to be red
-            shipColor = Color.FromArgb(255, 0, 0);
+            shipColor = Color.FromArgb(Petrol, 0, 0);
 
             // Declare brush and set the colour
             Brush brush = new SolidBrush(shipColor);
@@ -68,19 +71,28 @@ namespace PetrolBot
 
         public void moveShip(Rectangle boundsRectangle)
         {
-            // Changes the velocity direction by flipping the values (positive/negative)
-            if (shipLocation.X >= (boundsRectangle.Width - SHIP_SIZE) || (shipLocation.X <= 1))
+            if (Petrol != 0)
             {
-                shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
-            }
-            if (shipLocation.Y <= 1 || shipLocation.Y >= (boundsRectangle.Height - SHIP_SIZE))
-            {
-                shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
-            }
+                // Changes the velocity direction by flipping the values (positive/negative)
+                if (shipLocation.X >= (boundsRectangle.Width - SHIP_SIZE * 2) || (shipLocation.X <= 1))
+                {
+                    shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
+                }
+                if (shipLocation.Y <= 1 || shipLocation.Y > (boundsRectangle.Height - SHIP_SIZE))
+                {
+                    shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
+                }
 
-            // Update the location of the ship so that it 'moves'
-            shipLocation.X = shipLocation.X + shipVelocity.X;
-            shipLocation.Y = shipLocation.Y + shipVelocity.Y;
+                // Update the location of the ship so that it 'moves'
+                shipLocation.X = shipLocation.X + shipVelocity.X;
+                shipLocation.Y = shipLocation.Y + shipVelocity.Y;
+
+                Petrol -= 5;
+            }
+            else
+            {
+
+            }
         }
 
         public void OnFullOfFuelEvent()
@@ -95,7 +107,10 @@ namespace PetrolBot
 
         public void refuel()
         {
+            if (Petrol == 0)
+            {
 
+            }
         }
 
         public void ShipCycle(Rectangle boundsRectangle)
