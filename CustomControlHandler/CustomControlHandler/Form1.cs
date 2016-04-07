@@ -21,7 +21,7 @@ namespace CustomControlHandler
         {
             InitializeComponent();
 
-            // Instantitate
+            // Instantitate them
             rand = new Random();
             ccO1 = new CustomControlObserver(btnTest, rand.Next(100));
             ccO2 = new CustomControlObserver(btnTest, rand.Next(100));
@@ -29,7 +29,7 @@ namespace CustomControlHandler
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("This is the form's handler");
         }
     }
 }
