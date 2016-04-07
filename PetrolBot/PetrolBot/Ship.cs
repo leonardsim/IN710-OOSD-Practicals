@@ -43,8 +43,8 @@ namespace PetrolBot
             // set fix position for now
             ShipLocation = new Point(100, 100);
 
-            // Set ship color;
-            shipColor = Color.FromArgb(255, 0, 0);
+            // Set ship color as black
+            shipColor = Color.FromArgb(0, 0, 0);
 
             // Set ship velocity
             shipVelocity = new Point(rGen.Next(-2, 2), rGen.Next(-2, 2));
@@ -53,7 +53,14 @@ namespace PetrolBot
         //Method
         public void drawShip()
         {
+            // Set ship colour to be red
+            shipColor = Color.FromArgb(255, 0, 0);
 
+            // Declare brush and set the colour
+            Brush brush = new SolidBrush(shipColor);
+
+            // Draw the square ship
+            shipCanvas.FillRectangle(brush, ShipLocation.X, ShipLocation.Y, SHIP_SIZE, SHIP_SIZE);
         }
 
         public void moveShip()
