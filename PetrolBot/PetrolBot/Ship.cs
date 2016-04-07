@@ -98,9 +98,10 @@ namespace PetrolBot
 
         }
 
-        public void ShipCycle()
+        public void ShipCycle(Rectangle boundsRectangle)
         {
             drawShip();
+            moveShip(boundsRectangle);
         }
 
         public void usePetrol()
