@@ -11,7 +11,7 @@ namespace PetrolBot
     {
         //Const
         const int SHIP_SIZE = 30;
-        const int PETROL_VAL = 100;
+        const int PETROL_VAL = 50;
         const int MIN_SPEED = 5;
         const int MAX_SPEED = 20; 
 
@@ -20,8 +20,6 @@ namespace PetrolBot
 
         // Declare events
         public event FuelEventHandler OutOfFuelEvent;
-        public event FuelEventHandler FullOfFuelEvent;
-
 
         // Declare enum
         public enum EShipState { wandering, refueling }
@@ -32,9 +30,20 @@ namespace PetrolBot
         Color shipColor;
         Point shipLocation;
         Point shipVelocity;
+        EShipState shipState;
+
 
         //Accessor
-        public Point ShipLocation { get; set; }
+        public EShipState ShipState
+        {
+            get { return shipState; }
+            set { shipState = value; }
+        }
+        public Point ShipLocation
+        {
+            get { return shipLocation; }
+            set { shipLocation = value; }
+        }
         public int Petrol{ get;set; }
 
         //Constructor
@@ -42,6 +51,9 @@ namespace PetrolBot
         {
             this.shipCanvas = shipCanvas;
             this.rGen = rGen;
+
+            // Set default state
+            shipState = EShipState.wandering;
 
             // Set petrol value
             Petrol = PETROL_VAL;
@@ -54,7 +66,9 @@ namespace PetrolBot
             shipColor = Color.FromArgb(0, 0, 0);
 
             // Set ship velocity
-            shipVelocity = new Point(MIN_SPEED + rGen.Next(-MAX_SPEED, MAX_SPEED), MIN_SPEED + rGen.Next(-MAX_SPEED, MAX_SPEED));
+            // Make sure the no zero number gets generated
+            int randNum = rGen.Next(MIN_SPEED, MAX_SPEED);
+            shipVelocity = new Point(MIN_SPEED + rGen.Next(-randNum, randNum), MIN_SPEED + rGen.Next(-randNum, randNum));
         }
 
         //Method
@@ -76,7 +90,7 @@ namespace PetrolBot
 
         public void moveShip(Rectangle boundsRectangle)
         {
-            if (Petrol != 0)
+            if (shipState == EShipState.wandering)
             {
                 // Changes the velocity direction by flipping the values (positive/negative)
                 if (shipLocation.X >= (boundsRectangle.Width - SHIP_SIZE * 2) || (shipLocation.X <= 1))
@@ -92,52 +106,48 @@ namespace PetrolBot
                 shipLocation.X = shipLocation.X + shipVelocity.X;
                 shipLocation.Y = shipLocation.Y + shipVelocity.Y;
 
-                usePetrol();
+                // When location is updated, decrease the petrol value
+                UsePetrol();
             }
         }
 
-        public void OnFullOfFuelEvent()
-        {
-            ShipEventArgs e = new ShipEventArgs(shipLocation);
-
-            if (FullOfFuelEvent != null)
-            {
-                FullOfFuelEvent(this, e);
-            }
-        }
-
+        
         public void OnOutOfFuelEvent(Point currShipLocation)
         {
+            // Instantiate the custom event
             ShipEventArgs e = new ShipEventArgs(currShipLocation);
 
+            // Is null if no methods have been registered
             if (OutOfFuelEvent != null)
             {
+                // Raises the event
                 OutOfFuelEvent(this, e);
             }
         }
 
-        public void refuel()
+        // Increment the petrol value
+        public void Refuel()
         {
-            if (Petrol == 0)
-            {
-                while (Petrol != PETROL_VAL)
-                {
-                    Petrol++;
-                }
-            }
+            Petrol++;
         }
 
+        // Calls the moveShip and drawShip methods
         public void ShipCycle(Rectangle boundsRectangle)
         {
-            drawShip();
             moveShip(boundsRectangle);
+            drawShip();
         }
 
-        public void usePetrol()
+        // Decrement the petrol value and when 0, set status to 'refueling'
+        public void UsePetrol()
         {
             if (Petrol != 0)
             {
-                Petrol -= 1;
+                Petrol--;
+            }
+            else
+            {
+                shipState = EShipState.refueling;
             }
         }
     }
