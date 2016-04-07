@@ -31,7 +31,7 @@ namespace PetrolBot
 
         }
 
-        public void FullOfFuelEventhandler()
+        public void FullOfFuelEventHandler()
         {
 
         }

@@ -16,12 +16,14 @@ namespace PetrolBot
         public enum EShipState { wandering, refueling }
 
         //Attributes
-        int petrol;
-        Point shipLocation;
         Random rGen;
         Graphics shipCanvas;
         Color shipColor;
         Point shipVelocity;
+
+        //Accessor
+        public Point ShipLocation { get; set; }
+        public int Petrol{ get;set; }
 
         //Constructor
         public Ship(Graphics shipCanvas, Random rGen)
@@ -31,7 +33,7 @@ namespace PetrolBot
 
             // Set ship location
             // set fix position for now
-            shipLocation = new Point(100, 100);
+            ShipLocation = new Point(100, 100);
 
             // Set ship color;
             shipColor = Color.FromArgb(255, 0, 0);
@@ -40,5 +42,40 @@ namespace PetrolBot
             shipVelocity = new Point(rGen.Next(-2, 2), rGen.Next(-2, 2));
         }
 
+        //Method
+        public void drawShip()
+        {
+
+        }
+
+        public void moveShip()
+        {
+
+        }
+
+        public void OnFullOfFuelEvent()
+        {
+
+        }
+
+        public void OnOutOfFuelEvent()
+        {
+
+        }
+
+        public void refuel()
+        {
+
+        }
+
+        public void ShipCycle()
+        {
+
+        }
+
+        public void usePetrol()
+        {
+
+        }
     }
 }
