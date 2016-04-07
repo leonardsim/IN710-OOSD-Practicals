@@ -43,7 +43,7 @@ namespace PetrolBot
             this.rGen = rGen;
 
             // Set petrol value
-            Petrol = 255;
+            Petrol = rGen.Next(50, 101);
 
             // Set ship location
             // set fix position for now
@@ -59,18 +59,23 @@ namespace PetrolBot
         //Method
         public void drawShip()
         {
-            // Set ship colour to be red
-            shipColor = Color.FromArgb(Petrol, 0, 0);
+            // Get the petrol ratio to determine what shade of red it will be
+            double petrolRatio = Petrol / 100.0;
+            double redValue = 255 * petrolRatio;
 
-            // Declare brush and set the colour
-            Brush brush = new SolidBrush(shipColor);
+            // Set the shipColor to be that shade of red
+            shipColor = Color.FromArgb((int)redValue, 0, 0);
+
+            // Assign brush with that colour
+            Brush shipBrush = new SolidBrush(shipColor);
 
             // Draw the square ship
-            shipCanvas.FillRectangle(brush, shipLocation.X, shipLocation.Y, SHIP_SIZE, SHIP_SIZE);
+            shipCanvas.FillRectangle(shipBrush, shipLocation.X, shipLocation.Y, SHIP_SIZE, SHIP_SIZE);
         }
 
         public void moveShip(Rectangle boundsRectangle)
         {
+
             if (Petrol != 0)
             {
                 // Changes the velocity direction by flipping the values (positive/negative)
@@ -136,7 +141,7 @@ namespace PetrolBot
         {
             if (Petrol != 0)
             {
-                Petrol -= 5;
+                Petrol -= 1;
             }
         }
     }
