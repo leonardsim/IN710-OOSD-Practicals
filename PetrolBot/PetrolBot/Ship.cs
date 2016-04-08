@@ -11,18 +11,16 @@ namespace PetrolBot
     {
         //Const
         const int SHIP_SIZE = 30;
-        const int PETROL_VAL = 50;
         const int MIN_SPEED = 5;
         const int MAX_SPEED = 20; 
 
-        // Declare delegate
-        public delegate void FuelEventHandler(object sender, ShipEventArgs e);
+        // Declare delegate & events
+        public delegate void OutOfFuelEventHandler(object sender, ShipEventArgs e);
+        public event OutOfFuelEventHandler OutOfFuelEvent;
 
-        // Declare events
-        public event FuelEventHandler OutOfFuelEvent;
+        public delegate void FullOfFuelEventHandler(object sender, ShipEventArgs e);
+        public event FullOfFuelEventHandler FullOfFuelEvent;
 
-        // Declare enum
-        public enum EShipState { wandering, refueling }
 
         //Attributes
         Random rGen;
@@ -31,6 +29,7 @@ namespace PetrolBot
         Point shipLocation;
         Point shipVelocity;
         EShipState shipState;
+        int pRand;
 
 
         //Accessor
@@ -56,7 +55,8 @@ namespace PetrolBot
             shipState = EShipState.wandering;
 
             // Set petrol value
-            Petrol = PETROL_VAL;
+            pRand = rGen.Next(50, 101);
+            Petrol = pRand;
 
             // Set ship location
             // set fix position for now
@@ -111,11 +111,19 @@ namespace PetrolBot
             }
         }
 
+        public void OnFullOfFuelEvent()
+        {
+            ShipEventArgs e = new ShipEventArgs(shipState);
+
+            if (FullOfFuelEvent != null)
+                FullOfFuelEvent(this, e);
+        }
+
         
-        public void OnOutOfFuelEvent(Point currShipLocation)
+        public void OnOutOfFuelEvent()
         {
             // Instantiate the custom event
-            ShipEventArgs e = new ShipEventArgs(currShipLocation);
+            ShipEventArgs e = new ShipEventArgs(shipState);
 
             // Is null if no methods have been registered
             if (OutOfFuelEvent != null)
@@ -128,27 +136,42 @@ namespace PetrolBot
         // Increment the petrol value
         public void Refuel()
         {
-            Petrol++;
+            if (Petrol < 100)
+            {
+                Petrol++;
+            }
         }
 
         // Calls the moveShip and drawShip methods
         public void ShipCycle(Rectangle boundsRectangle)
         {
-            moveShip(boundsRectangle);
-            drawShip();
+            if (Petrol == 100)
+            {
+                shipState = EShipState.wandering;
+                OnFullOfFuelEvent();
+            }
+
+            if (Petrol == 0)
+            {
+                shipState = EShipState.refueling;
+            }
+
+            if (shipState == EShipState.wandering)
+            {
+                drawShip();
+                moveShip(boundsRectangle);
+            }
+            else
+            {
+                drawShip();
+                OnOutOfFuelEvent();
+            }
         }
 
         // Decrement the petrol value and when 0, set status to 'refueling'
         public void UsePetrol()
         {
-            if (Petrol != 0)
-            {
-                Petrol--;
-            }
-            else
-            {
-                shipState = EShipState.refueling;
-            }
+            Petrol--;
         }
     }
 }

@@ -7,15 +7,20 @@ using System.Threading.Tasks;
 
 namespace PetrolBot
 {
+
+    // Declare enum
+    public enum EShipState { wandering, refueling }
+
     public class ShipEventArgs : EventArgs
     {
         //Attribute
         public Point ShipLocation {get; set;}
+        EShipState state;
 
         //Constructor
-        public ShipEventArgs(Point ShipLocation)
+        public ShipEventArgs(EShipState state)
         {
-            this.ShipLocation = ShipLocation;
+            this.state = state;
         }
     }
 }

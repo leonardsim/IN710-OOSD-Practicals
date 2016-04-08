@@ -28,9 +28,13 @@ namespace PetrolBot
             botStartingLocation = startLoc;
             botCurrentLocation = botStartingLocation;
 
-            Ship.FuelEventHandler handler = new Ship.FuelEventHandler(OutOfFuelEventHandler);
+            Ship.OutOfFuelEventHandler outOfFuelHandler = new Ship.OutOfFuelEventHandler(OutOfFuelEventHandler);
 
-            botShip.OutOfFuelEvent += handler;
+            botShip.OutOfFuelEvent += outOfFuelHandler;
+
+            Ship.FullOfFuelEventHandler fullOfFuelHandler = new Ship.FullOfFuelEventHandler(FullOfFuelEventHandler);
+
+            botShip.FullOfFuelEvent += fullOfFuelHandler;
         }
 
         //Methods
@@ -42,35 +46,19 @@ namespace PetrolBot
             botCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, PETROL_SIZE, PETROL_SIZE);
         }
 
-        // Made async method to run it asynchronously 
-        public async void OutOfFuelEventHandler(object sender, ShipEventArgs e)
+        public void FullOfFuelEventHandler(object ship, ShipEventArgs shipArgs)
         {
-            // When petrol is 0, change state to refueling
-            if (botShip.Petrol == 0)
-            {
-                botShip.ShipState = Ship.EShipState.refueling;
+            // Reset petrolBots to initital position
+            botCurrentLocation = botStartingLocation;
+        }
 
-                // Set the refueler lcoation to be the same as the current ship location
-                botCurrentLocation.X = botShip.ShipLocation.X;
-                botCurrentLocation.Y = botShip.ShipLocation.Y;
 
-                // While petrol is not full yet, call refuel method
-                while(botShip.Petrol != 50)
-                {
-                    botShip.Refuel();
-                    
-                    // Delay the processing by 100ms
-                    await Task.Delay(100);
-                }
+        public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
+        {
+            // Set the refueler lcoation to be the same as the current ship location
+            botCurrentLocation = botShip.ShipLocation;
 
-                // Change state back to wandering
-                botShip.ShipState = Ship.EShipState.wandering;
-
-                // Reset petrolBots to initital position
-                botCurrentLocation.X = botStartingLocation.X;
-                botCurrentLocation.Y = botStartingLocation.Y;
-            }
-
+            botShip.Refuel();
         }
 
     }

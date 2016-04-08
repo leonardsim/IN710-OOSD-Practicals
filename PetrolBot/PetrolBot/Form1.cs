@@ -76,7 +76,6 @@ namespace PetrolBot
             foreach (Ship s in shipList)
             {
                 s.ShipCycle(boundsRectangle);
-                s.OnOutOfFuelEvent(s.ShipLocation);
             }
 
             // Draws the petrol
