@@ -26,29 +26,6 @@ namespace PredicateDelegate
         }
 
         //Method
-        // Checks to see if the input is an odd number
-        private bool isOdd(int inputInteger)
-        {
-            bool isAnOddNumber = ((inputInteger % 2) == 1);
-            return isAnOddNumber;
-        }
-
-        // Checks to see if the input is less than 10
-        private bool isLessThan(int inputInteger)
-        {
-            bool isLessThanTen;
-
-            if (inputInteger < 10)
-            {
-                isLessThanTen = true;
-            }
-            else
-            {
-                isLessThanTen = false;
-            }
-
-            return isLessThanTen;
-        }
 
         private void generateRand()
         {
@@ -82,12 +59,8 @@ namespace PredicateDelegate
             // Clear list box
             lbResult.Items.Clear();
 
-            // Declare, initialize and instantiate Predicate
-            Predicate<int> isOddPredicate = new Predicate<int>(isOdd);
-
-            // Call FindAll method which accepts a Predicate and returns a list of int composed
-            // of all elelemts of the target list for which the Predicate returns true
-            List<int> results = numList.FindAll(isOddPredicate);
+            // Replaced predicate delegate with lamda expressions
+            List<int> results = numList.FindAll((i) => (i % 2) == 1);
 
             // Display it onto the listbox
             foreach (int r in results)
@@ -102,12 +75,7 @@ namespace PredicateDelegate
             // Clear list box
             lbResult.Items.Clear();
 
-            // Declare, initialize and instantiate Predicate
-            Predicate<int> isLessThanPredicate = new Predicate<int>(isLessThan);
-
-            // Call FindAll method which accepts a Predicate and returns a list of int composed
-            // of all elelemts of the target list for which the Predicate returns true
-            List<int> results = numList.FindAll(isLessThanPredicate);
+            List<int> results = numList.FindAll((i) => (i < 10));
 
             // Display it onto the listbox
             foreach (int r in results)
