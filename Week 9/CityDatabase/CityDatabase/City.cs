@@ -20,5 +20,11 @@ namespace CityDatabase
             CountryName = countryName;
             Population = population;
         }
+
+        //Method
+        public override string ToString()
+        {
+            return CityName + ": \t" + Population;
+        }
     }
 }

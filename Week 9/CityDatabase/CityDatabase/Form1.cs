@@ -85,5 +85,14 @@ namespace CityDatabase
                 }
             }
         }
+
+        private void btnMulti_Click(object sender, EventArgs e)
+        {
+            // Clear the listbox
+            lbPop.Items.Clear();
+
+            cityList.ForEach(c => c.Population *= 3);
+            cityList.ForEach(c => lbPop.Items.Add(c.ToString()));
+        }
     }
 }
