@@ -66,5 +66,24 @@ namespace CityDatabase
             countryList.Add(cLon.CountryName);
             countryList.Add(CAuc.CountryName);
         }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            // Clear the listbox
+            lbCities.Items.Clear();
+
+            // Func will accept 2 strings and return a bool
+            // The 2 strings will be comapred to check if they are the same
+            Func<string, string, bool> displayCity = (a, b) => a.Equals(b);
+
+            // Adds the city name to the listbox if country name of city and country name from combobox matches
+            foreach (City c in cityList)
+            {
+                if(displayCity(c.CountryName, cbCountry.SelectedItem.ToString()))
+                {
+                    lbCities.Items.Add(c.CityName);
+                }
+            }
+        }
     }
 }

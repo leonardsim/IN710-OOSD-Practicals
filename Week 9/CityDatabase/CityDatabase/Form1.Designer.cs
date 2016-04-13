@@ -58,6 +58,7 @@
             this.btnDisplay.TabIndex = 3;
             this.btnDisplay.Text = "Display Cities";
             this.btnDisplay.UseVisualStyleBackColor = true;
+            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // label1
             // 
