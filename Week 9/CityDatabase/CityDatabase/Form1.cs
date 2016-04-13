@@ -26,6 +26,15 @@ namespace CityDatabase
 
             // Call populateLists()
             populateLists();
+
+            // Add the countries to the combobox
+            foreach(String c in countryList)
+            {
+                cbCountry.Items.Add(c);
+            }
+
+            // Set the default item to be the first one in the combo box
+            cbCountry.SelectedIndex = 0;
         }
 
         //Method
