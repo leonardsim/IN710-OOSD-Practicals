@@ -36,6 +36,7 @@
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnRock = new System.Windows.Forms.Button();
+            this.btnMonth = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,11 +99,22 @@
             this.btnRock.UseVisualStyleBackColor = true;
             this.btnRock.Click += new System.EventHandler(this.btnRock_Click);
             // 
+            // btnMonth
+            // 
+            this.btnMonth.Location = new System.Drawing.Point(253, 169);
+            this.btnMonth.Name = "btnMonth";
+            this.btnMonth.Size = new System.Drawing.Size(114, 44);
+            this.btnMonth.TabIndex = 3;
+            this.btnMonth.Text = "Current month gig";
+            this.btnMonth.UseVisualStyleBackColor = true;
+            this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 225);
+            this.Controls.Add(this.btnMonth);
             this.Controls.Add(this.btnRock);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.dgvGigs);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Button btnRock;
+        private System.Windows.Forms.Button btnMonth;
     }
 }
 
