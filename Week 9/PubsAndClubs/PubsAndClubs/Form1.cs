@@ -15,6 +15,7 @@ namespace PubsAndClubs
     {
         // Declare DataGridViewRowCollection & XDocument
         DataGridViewRowCollection dgvRows;
+        DataGridViewRowCollection dgvRows2;
         XDocument bandDoc;
 
         public Form1()
@@ -24,6 +25,7 @@ namespace PubsAndClubs
             // Inititalise them
             bandDoc = XDocument.Load("pubsAndClubs.xml");
             dgvRows = dgvGigs.Rows;
+            dgvRows2 = dgvBand.Rows;
         }
 
         //Methods
@@ -114,6 +116,50 @@ namespace PubsAndClubs
             }
         }
 
+        private void displayAlabamaShakes()
+        {
+            //CLear data grid view rows
+            dgvRows2.Clear();
+
+            // Get the root element
+            XElement evGuide = bandDoc.Element("Event_Guide");
+
+            foreach (XElement gig in evGuide.Elements("Gig"))
+            {
+                if (gig.Element("Band").Element("Name").Value.Trim().Equals("Alabama Shakes"))
+                {
+                    foreach (XElement member in gig.Element("Band").Element("Band_Members").Elements("Member"))
+                    {
+                        string firstName = member.Element("First_Name").Value;
+                        string lastName = member.Element("Last_Name").Value;
+
+                        // Check for members with role
+                        string role = "";
+                        if (member.Element("Role") != null)
+                        {
+                            role = member.Element("Role").Value;
+                        }
+                        else
+                        {
+                            role = "No Role";
+                        }
+
+                        // May have mroe than 1 instrument
+                        string instruments = "";
+                        foreach (XElement i in member.Element("Instruments").Elements("Instrument"))
+                        {
+                            instruments += i.Value + ", ";
+                        }
+
+                        String[] newRowValue = { firstName, lastName, role, instruments };
+
+                        // Add the string array to the row
+                        dgvRows2.Add(newRowValue);
+                    }
+                }
+            }
+        }
+
         private void btnInfo_Click(object sender, EventArgs e)
         {
             displayBandInfo();
@@ -127,6 +173,11 @@ namespace PubsAndClubs
         private void btnMonth_Click(object sender, EventArgs e)
         {
             displayCurrentMonthGig();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            displayAlabamaShakes();
         }
     }
 }
