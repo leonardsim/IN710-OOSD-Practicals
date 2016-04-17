@@ -160,6 +160,32 @@ namespace PubsAndClubs
             }
         }
 
+        private void addNewGig()
+        {
+            XElement newGig = new XElement("Gig",
+                new XElement("Venue", "Forsyth Barr Stadium"),
+                new XElement("Date", new XAttribute("day", "25"), new XAttribute("month", "12"), new XAttribute("year", "2016")),
+                new XElement("Time", "12:30pm"),
+                new XElement("Band",
+                    new XElement("Name", "Royal Blood"),
+                    new XElement("Genre", "Hard Rock"),
+                    new XElement("Band_Member",
+                        new XElement("Member",
+                            new XElement("First_Name", "Mike"),
+                            new XElement("Last_Name", "Kerr"),
+                            new XElement("Role", "Bassist"),
+                            new XElement("Instruments",
+                                new XElement("Instrument", "Bass"))),
+                        new XElement("Member",
+                            new XElement("First_Name", "Ben"),
+                            new XElement("Last_Name", "Thatcher"),
+                            new XElement("Role", "Drummer"),
+                            new XElement("Instruments",
+                                new XElement("Instrument", "Drums"))))));
+
+            bandDoc.Element("Event_Guide").Add(newGig);
+        }
+
         private void btnInfo_Click(object sender, EventArgs e)
         {
             displayBandInfo();
@@ -178,6 +204,11 @@ namespace PubsAndClubs
         private void button1_Click(object sender, EventArgs e)
         {
             displayAlabamaShakes();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            addNewGig();
         }
     }
 }

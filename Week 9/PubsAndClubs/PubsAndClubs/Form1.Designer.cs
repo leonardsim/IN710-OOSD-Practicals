@@ -38,11 +38,12 @@
             this.btnRock = new System.Windows.Forms.Button();
             this.btnMonth = new System.Windows.Forms.Button();
             this.dgvBand = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAS = new System.Windows.Forms.Button();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instruments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBand)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             this.time});
             this.dgvGigs.Location = new System.Drawing.Point(13, 13);
             this.dgvGigs.Name = "dgvGigs";
-            this.dgvGigs.Size = new System.Drawing.Size(504, 119);
+            this.dgvGigs.Size = new System.Drawing.Size(595, 119);
             this.dgvGigs.TabIndex = 0;
             // 
             // bandName
@@ -126,18 +127,18 @@
             this.instruments});
             this.dgvBand.Location = new System.Drawing.Point(12, 138);
             this.dgvBand.Name = "dgvBand";
-            this.dgvBand.Size = new System.Drawing.Size(505, 119);
+            this.dgvBand.Size = new System.Drawing.Size(596, 119);
             this.dgvBand.TabIndex = 4;
             // 
-            // button1
+            // btnAS
             // 
-            this.button1.Location = new System.Drawing.Point(373, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 44);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Alabama Shakes members";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAS.Location = new System.Drawing.Point(373, 266);
+            this.btnAS.Name = "btnAS";
+            this.btnAS.Size = new System.Drawing.Size(114, 44);
+            this.btnAS.TabIndex = 5;
+            this.btnAS.Text = "Alabama Shakes members";
+            this.btnAS.UseVisualStyleBackColor = true;
+            this.btnAS.Click += new System.EventHandler(this.button1_Click);
             // 
             // firstName
             // 
@@ -163,12 +164,23 @@
             this.instruments.Name = "instruments";
             this.instruments.Width = 86;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(493, 266);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(114, 44);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Add \'Royal Blood\'";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 322);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(620, 322);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnAS);
             this.Controls.Add(this.dgvBand);
             this.Controls.Add(this.btnMonth);
             this.Controls.Add(this.btnRock);
@@ -194,11 +206,12 @@
         private System.Windows.Forms.Button btnRock;
         private System.Windows.Forms.Button btnMonth;
         private System.Windows.Forms.DataGridView dgvBand;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAS;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn instruments;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 
