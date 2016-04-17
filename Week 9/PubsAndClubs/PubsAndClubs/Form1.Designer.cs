@@ -34,6 +34,7 @@
             this.venue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,11 +77,22 @@
             this.time.HeaderText = "Time";
             this.time.Name = "time";
             // 
+            // btnInfo
+            // 
+            this.btnInfo.Location = new System.Drawing.Point(13, 169);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(114, 44);
+            this.btnInfo.TabIndex = 1;
+            this.btnInfo.Text = "Display band info";
+            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 261);
+            this.ClientSize = new System.Drawing.Size(529, 225);
+            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.dgvGigs);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -97,6 +109,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn venue;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.Button btnInfo;
     }
 }
 
