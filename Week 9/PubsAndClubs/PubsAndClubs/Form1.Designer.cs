@@ -28,12 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dgvGigs = new System.Windows.Forms.DataGridView();
+            this.bandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.venue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgvGigs
+            // 
+            this.dgvGigs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGigs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bandName,
+            this.genre,
+            this.venue,
+            this.date,
+            this.time});
+            this.dgvGigs.Location = new System.Drawing.Point(13, 13);
+            this.dgvGigs.Name = "dgvGigs";
+            this.dgvGigs.Size = new System.Drawing.Size(504, 150);
+            this.dgvGigs.TabIndex = 0;
+            // 
+            // bandName
+            // 
+            this.bandName.HeaderText = "Band Name";
+            this.bandName.Name = "bandName";
+            // 
+            // genre
+            // 
+            this.genre.HeaderText = "Genre";
+            this.genre.Name = "genre";
+            // 
+            // venue
+            // 
+            this.venue.HeaderText = "Venue";
+            this.venue.Name = "venue";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Time";
+            this.time.Name = "time";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(529, 261);
+            this.Controls.Add(this.dgvGigs);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvGigs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bandName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time;
     }
 }
 
