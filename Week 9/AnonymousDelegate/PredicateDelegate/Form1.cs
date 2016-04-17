@@ -39,6 +39,20 @@ namespace PredicateDelegate
             }
         }
 
+        private void LamdaFilter(Predicate<int> filter)
+        {
+            // Clear list box
+            lbResult.Items.Clear();
+
+            // List box that will save the filtered values
+            List<int> filtered = numList.FindAll(filter);
+
+            foreach(int i in filtered)
+            {
+                lbResult.Items.Add(i.ToString());
+            }
+        }
+
         private void btnRand_Click(object sender, EventArgs e)
         {
             // Clear number list and list boxes
@@ -56,32 +70,12 @@ namespace PredicateDelegate
 
         private void btnEven_Click(object sender, EventArgs e)
         {
-            // Clear list box
-            lbResult.Items.Clear();
-
-            // Replaced predicate delegate with lamda expressions
-            List<int> results = numList.FindAll((i) => (i % 2) == 1);
-
-            // Display it onto the listbox
-            foreach (int r in results)
-            {
-                lbResult.Items.Add(r);
-            }
-            
+            LamdaFilter(n => (n % 2 == 1));
         }
 
         private void btnTen_Click(object sender, EventArgs e)
         {
-            // Clear list box
-            lbResult.Items.Clear();
-
-            List<int> results = numList.FindAll((i) => (i < 10));
-
-            // Display it onto the listbox
-            foreach (int r in results)
-            {
-                lbResult.Items.Add(r);
-            }
+            LamdaFilter(n => (n < 10));
         }
     }
 }
