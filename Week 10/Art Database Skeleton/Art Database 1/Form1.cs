@@ -64,6 +64,8 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+
             var allPaintings = from paint in paintings
                                select new { paint.Artist, paint.Year, paint.Method, paint.Title };
 
@@ -79,6 +81,8 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+
             var italianArtists = from artist in artists
                                  where String.Equals(artist.Country, "Italy")
                                  select new { artist.FirstName, artist.LastName, artist.YearOfBirth, artist.YearOfDeath, artist.Country };
@@ -94,6 +98,8 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnBefore1800_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+
             var paintingsBefore1800 = from paint in paintings
                                       where (paint.Year < 1800)
                                       orderby paint.Year
@@ -110,7 +116,20 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnOldest_Click(object sender, EventArgs e)
         {
-            
+            listBox1.Items.Clear();
+
+            // Obtain the lowest year in paintings list
+            int lowestYear = paintings.Min(p => p.Year);
+
+            var oldestPainting = from paint in paintings
+                                 where paint.Year == lowestYear
+                                 select new { paint.Artist, paint.Year, paint.Method, paint.Title };
+
+
+            foreach (var record in oldestPainting)
+            {
+                listBox1.Items.Add(record.Artist + "\t\t" + record.Year + "\t\t" + record.Method + "\t\t" + record.Title);
+            }
         }
 
         //------------------------------------------------------
