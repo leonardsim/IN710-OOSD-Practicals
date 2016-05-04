@@ -137,7 +137,20 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button6_Click(object sender, EventArgs e)
         {
-           
+            listBox1.Items.Clear();
+
+            // Obtain user input
+            string userInput = textBox1.Text.ToLower();
+
+            var userArtists = from paint in paintings
+                              where String.Equals(paint.Artist.ToLower(), userInput)
+                              select new { paint.Artist, paint.Year, paint.Method, paint.Title };
+
+
+            foreach (var record in userArtists)
+            {
+                listBox1.Items.Add(record.Artist + "\t\t" + record.Year + "\t\t" + record.Method + "\t\t" + record.Title);
+            }
         }
 
         //------------------------------------------------------
