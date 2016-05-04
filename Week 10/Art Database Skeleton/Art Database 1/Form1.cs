@@ -227,7 +227,17 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+
+            var artistPaintingCountry = from paint in paintings
+                                        join artist in artists
+                                        on paint.Artist equals artist.LastName
+                                        select new { artist.FirstName, artist.LastName, artist.Country, paint.Title };
+
+            foreach (var record in artistPaintingCountry)
+            {
+                listBox1.Items.Add(record.FirstName + " " + record.LastName + "\t\t" + record.Country + "\t\t\t" + record.Title);
+            }
         }
 
         //------------------------------------------------------
@@ -235,7 +245,6 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button9_Click(object sender, EventArgs e)
         {
-          
         }
 
  
