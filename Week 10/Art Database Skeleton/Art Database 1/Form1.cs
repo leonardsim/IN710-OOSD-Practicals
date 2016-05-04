@@ -245,6 +245,19 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button9_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+
+            var frenchItalianPainters = from paint in paintings
+                                        join artist in artists
+                                        on paint.Artist equals artist.LastName
+                                        orderby artist.FirstName
+                                        where (String.Equals(artist.Country, "Italy")) || (String.Equals(artist.Country, "France"))
+                                        select new { artist.FirstName, artist.LastName, artist.Country, paint.Title };
+
+            foreach (var record in frenchItalianPainters)
+            {
+                listBox1.Items.Add(record.FirstName + " " + record.LastName + "\t\t" + record.Country + "\t\t\t" + record.Title);
+            }
         }
 
  
