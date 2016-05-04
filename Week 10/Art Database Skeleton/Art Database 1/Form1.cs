@@ -79,7 +79,14 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
+            var italianArtists = from artist in artists
+                                 where String.Equals(artist.Country, "Italy")
+                                 select new { artist.FirstName, artist.LastName, artist.YearOfBirth, artist.YearOfDeath, artist.Country };
 
+            foreach (var record in italianArtists)
+            {
+                listBox1.Items.Add(record.FirstName + " " + record.LastName + "\t\t" + record.YearOfBirth + "-" + record.YearOfDeath + "\t\t" + record.Country);
+            }
         }
 
         //------------------------------------------------------
