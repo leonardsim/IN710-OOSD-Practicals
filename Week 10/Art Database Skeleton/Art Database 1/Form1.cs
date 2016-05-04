@@ -94,7 +94,15 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnBefore1800_Click(object sender, EventArgs e)
         {
-            
+            var paintingsBefore1800 = from paint in paintings
+                                      where (paint.Year < 1800)
+                                      orderby paint.Year
+                                      select new { paint.Artist, paint.Year, paint.Method, paint.Title };
+
+            foreach (var record in paintingsBefore1800)
+            {
+                listBox1.Items.Add(record.Artist + "\t\t" + record.Year + "\t\t" + record.Method + "\t\t" + record.Title);
+            }
         }
 
         //------------------------------------------------------
