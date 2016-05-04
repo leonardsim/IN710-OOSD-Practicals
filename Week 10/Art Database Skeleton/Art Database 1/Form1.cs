@@ -165,7 +165,10 @@ namespace Art_Database_1
                                             on paint.Artist equals artist.LastName
                                             group artist by artist.Country;
 
-            foreach (var group in paintingsGroupedByCountry)
+            // Sorts the collection of IEnumerables by the count 
+            var sortedGroup = paintingsGroupedByCountry.OrderBy(g => g.Count());
+
+            foreach (var group in sortedGroup)
             {
                 int countryCount = group.Count();
                 String countryName = group.Key;
@@ -179,7 +182,23 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button8_Click(object sender, EventArgs e)
         {
-                      
+            listBox1.Items.Clear();
+
+            var paintingsGroupedByCountry = from artist in artists
+                                            orderby artist.Country
+                                            group artist by artist.Country;
+
+            foreach (var group in paintingsGroupedByCountry)
+            {
+                String countryName = group.Key;
+
+                listBox1.Items.Add(countryName + ":");
+
+                foreach (Artist artist in group)
+                {
+                    listBox1.Items.Add("\t\t" + artist.FirstName + " " + artist.LastName);
+                }
+            }      
         }
 
         //------------------------------------------------------
