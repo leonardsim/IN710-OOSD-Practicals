@@ -184,11 +184,11 @@ namespace Art_Database_1
         {
             listBox1.Items.Clear();
 
-            var paintingsGroupedByCountry = from artist in artists
+            var artistsGroupedByCountry = from artist in artists
                                             orderby artist.Country
                                             group artist by artist.Country;
 
-            foreach (var group in paintingsGroupedByCountry)
+            foreach (var group in artistsGroupedByCountry)
             {
                 String countryName = group.Key;
 
@@ -206,7 +206,20 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button7_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+
+            var dutchPainters = from paint in paintings
+                                join artist in artists
+                                on paint.Artist equals artist.LastName
+                                orderby paint.Year
+                                where String.Equals(artist.Country, "Netherlands")
+                                select new { paint.Artist, paint.Year, paint.Method, paint.Title };
+
+
+            foreach (var record in dutchPainters)
+            {
+                listBox1.Items.Add(record.Artist + "\t\t" + record.Year + "\t\t" + record.Method + "\t\t" + record.Title);
+            }
         }
 
         //------------------------------------------------------
