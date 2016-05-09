@@ -56,5 +56,29 @@ namespace FireLightningStrikeExternalDatabase
                 lbOutput.Items.Add(fire.fireID + "\t" + fire.fireDate + "\t" + fire.fireLatitude + "\t" + fire.fireLongitude + "\t" + fire.fireArea);
             }
         }
+
+        private void btnLatLongPic_Click(object sender, EventArgs e)
+        {
+            //Clear listbox
+            lbOutput.Items.Clear();
+
+            // Join the strike and picture table
+            var strikePic = from strike in db.tblStrikes
+                            join pic in db.tblPictures
+                            on strike.strikeID equals pic.strikeID
+                            select new { strike.strikeLatitude, strike.strikeLongitude, pic.pictureFileName };
+
+            // Output it
+            foreach (var record in strikePic)
+            {
+                lbOutput.Items.Add(record.strikeLatitude + "\t" + record.strikeLongitude + "\t" + record.pictureFileName);
+            }
+
+        }
+
+        private void btnStrikeFire_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

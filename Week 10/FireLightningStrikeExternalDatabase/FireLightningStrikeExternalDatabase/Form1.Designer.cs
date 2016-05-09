@@ -71,6 +71,7 @@
             this.btnLatLongPic.TabIndex = 3;
             this.btnLatLongPic.Text = "Picture Lat and Long";
             this.btnLatLongPic.UseVisualStyleBackColor = true;
+            this.btnLatLongPic.Click += new System.EventHandler(this.btnLatLongPic_Click);
             // 
             // btnStrikeFire
             // 
@@ -80,6 +81,7 @@
             this.btnStrikeFire.TabIndex = 4;
             this.btnStrikeFire.Text = "Strike Cause Fire";
             this.btnStrikeFire.UseVisualStyleBackColor = true;
+            this.btnStrikeFire.Click += new System.EventHandler(this.btnStrikeFire_Click);
             // 
             // Form1
             // 
