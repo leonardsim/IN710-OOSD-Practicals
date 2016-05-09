@@ -51,6 +51,7 @@
             this.btnAvg.TabIndex = 1;
             this.btnAvg.Text = "Average Insentity";
             this.btnAvg.UseVisualStyleBackColor = true;
+            this.btnAvg.Click += new System.EventHandler(this.btnAvg_Click);
             // 
             // btnLargest
             // 
