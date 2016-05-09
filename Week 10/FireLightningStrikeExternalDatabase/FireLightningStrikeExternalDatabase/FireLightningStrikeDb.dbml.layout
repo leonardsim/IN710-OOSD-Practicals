@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="FireLightningStrikeDb">
+  <DataContextMoniker Name="/FireLightningStrikeDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ea9d5da7-2a74-4bac-a505-8a01b8eb8929" absoluteBounds="0.5, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/FireLightningStrikeDbDataContext/tblFire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12c12138-685f-4948-9c9e-80ceb1ee2e9f" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ab04b5f-8d30-4424-a046-7cb11b3e274c" absoluteBounds="3.75, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FireLightningStrikeDbDataContext/tblPicture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55cb4f94-6f35-420c-996b-a75b2b913385" absoluteBounds="3.7649999999999997, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7db867bb-503a-4430-9b8e-7759f5adb2a0" absoluteBounds="2.125, 3, 2, 1.9631982421875">
+      <DataClassMoniker Name="/FireLightningStrikeDbDataContext/tblStrike" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e685276f-6246-47d5-b063-f5d7f9734c65" absoluteBounds="2.14, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.9375 : 3); (3.9375 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FireLightningStrikeDbDataContext/tblStrike/tblStrike_tblPicture" />
+      <nodes>
+        <classShapeMoniker Id="7db867bb-503a-4430-9b8e-7759f5adb2a0" />
+        <classShapeMoniker Id="9ab04b5f-8d30-4424-a046-7cb11b3e274c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

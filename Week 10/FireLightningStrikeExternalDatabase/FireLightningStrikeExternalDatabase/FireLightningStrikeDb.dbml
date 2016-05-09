@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IN700001_201601_SIMLE1" Class="FireLightningStrikeDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=bitdev.ict.op.ac.nz;Initial Catalog=IN700001_201601_SIMLE1;Persist Security Info=True;User ID=simle1" SettingsObjectName="FireLightningStrikeExternalDatabase.Properties.Settings" SettingsPropertyName="IN700001_201601_SIMLE1ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblFire" Member="tblFires">
+    <Type Name="tblFire">
+      <Column Name="fireID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fireDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fireLatitude" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fireLongitude" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fireArea" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPicture" Member="tblPictures">
+    <Type Name="tblPicture">
+      <Column Name="pictureID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strikeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pictureDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="pictureFileName" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Association Name="tblStrike_tblPicture" Member="tblStrike" ThisKey="strikeID" OtherKey="strikeID" Type="tblStrike" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStrike" Member="tblStrikes">
+    <Type Name="tblStrike">
+      <Column Name="strikeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="strikeDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="strikeTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="strikeLatitude" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="strikeLongitude" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="strikeIntensity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblStrike_tblPicture" Member="tblPictures" ThisKey="strikeID" OtherKey="strikeID" Type="tblPicture" />
+    </Type>
+  </Table>
+</Database>
