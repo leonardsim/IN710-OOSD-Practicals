@@ -78,7 +78,23 @@ namespace FireLightningStrikeExternalDatabase
 
         private void btnStrikeFire_Click(object sender, EventArgs e)
         {
+            //Clear listbox
+            lbOutput.Items.Clear();
 
+            // Join the strike and fire table on the date 
+            // The longitude and Latitude have to be the same to determine if the strike caused the fire
+            var fireStrike = from f in db.tblFires
+                             join s in db.tblStrikes
+                             on f.fireDate equals s.strikeDate
+                             where (f.fireLatitude == s.strikeLatitude
+                             && f.fireLongitude == s.strikeLongitude)
+                             select f;
+
+            // Output it
+            foreach (var record in fireStrike)
+            {
+                lbOutput.Items.Add(record.fireID + "\t" + record.fireDate + "\t" + record.fireLatitude + "\t" + record.fireLongitude + "\t" + record.fireArea);
+            }
         }
     }
 }
