@@ -61,6 +61,7 @@
             this.btnLargest.TabIndex = 2;
             this.btnLargest.Text = "Largest 3 Fires";
             this.btnLargest.UseVisualStyleBackColor = true;
+            this.btnLargest.Click += new System.EventHandler(this.btnLargest_Click);
             // 
             // btnLatLongPic
             // 

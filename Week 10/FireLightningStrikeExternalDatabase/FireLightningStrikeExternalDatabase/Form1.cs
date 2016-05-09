@@ -36,5 +36,25 @@ namespace FireLightningStrikeExternalDatabase
 
             lbOutput.Items.Add("The average strike intensity is: " + avgIntensity);
         }
+
+        private void btnLargest_Click(object sender, EventArgs e)
+        {
+            //Clear listbox
+            lbOutput.Items.Clear();
+
+            // Order the fireArea in descending order
+            var fireArea =  from fire in db.tblFires
+                            orderby fire.fireArea descending
+                            select fire;
+
+            // Take the first 3 element
+            var topThreeFire = fireArea.Take(3);
+
+            // Output it
+            foreach (var fire in topThreeFire)
+            {
+                lbOutput.Items.Add(fire.fireID + "\t" + fire.fireDate + "\t" + fire.fireLatitude + "\t" + fire.fireLongitude + "\t" + fire.fireArea);
+            }
+        }
     }
 }
