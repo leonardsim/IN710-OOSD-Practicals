@@ -57,7 +57,20 @@ namespace ADOdatabase
                                  "firstName VARCHAR(30), " +
                                  "lastName VARCHAR(30), " +
                                  "email VARCHAR(100), " +
-                                 "CONSTRAINT PK_tblTutors PRIMARY KEY(tutID))";
+                                 "PRIMARY KEY(tutID))";
+
+            executeNonQuery(createTable);
+        }
+
+        // Creates a paper table
+        private void createPaperTable()
+        {
+            string createTable = "CREATE TABLE tblPapers (" +
+                                 "paperID INT IDENTITY, " +
+                                 "tutID INT, " +
+                                 "paperName VARCHAR(30), " +
+                                 "PRIMARY KEY(tutID)," + 
+                                 "FOREIGN KEY(lecID) REFERENCES tblTutors(tutID))";
 
             executeNonQuery(createTable);
         }
