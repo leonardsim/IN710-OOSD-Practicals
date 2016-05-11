@@ -41,6 +41,12 @@ namespace ADOdatabase
             nonQuery.ExecuteNonQuery();
         }
 
+        private void dropExistingTables(string table)
+        {
+            String dropTable = "IF OBJECT_ID('" + table + "') IS NOT NULL DROP TABLE " + table + ";";
+            executeNonQuery(dropTable);
+        }
+
 
     }
 }
