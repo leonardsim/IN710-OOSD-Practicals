@@ -54,23 +54,38 @@ namespace ADOdatabase
         {
             string createTable = "CREATE TABLE tblTutors (" +
                                  "tutID INT IDENTITY, " +
-                                 "firstName VARCHAR(30), " +
-                                 "lastName VARCHAR(30), " +
-                                 "email VARCHAR(100), " +
+                                 "firstName VARCHAR(30) NOT NULL, " +
+                                 "lastName VARCHAR(30) NOT NULL, " +
+                                 "email VARCHAR(100) NOT NULL, " +
                                  "PRIMARY KEY(tutID))";
 
             executeNonQuery(createTable);
         }
 
         // Creates a paper table
-        private void createPaperTable()
+        private void createPapersTable()
         {
             string createTable = "CREATE TABLE tblPapers (" +
                                  "paperID INT IDENTITY, " +
-                                 "tutID INT, " +
-                                 "paperName VARCHAR(30), " +
+                                 "tutID INT NOT NULL, " +
+                                 "paperName VARCHAR(50) NOT NULL, " +
                                  "PRIMARY KEY(tutID)," + 
                                  "FOREIGN KEY(lecID) REFERENCES tblTutors(tutID))";
+
+            executeNonQuery(createTable);
+        }
+
+        // Creates an assignment table
+        private void createAssignmentsTable()
+        {
+            string createTable = "CREATE TABLE tblAssignments (" +
+                                 "assignID INT IDENTITY, " +
+                                 "paperID INT NOT NULL, " +
+                                 "assignTopic VARCHAR(100) NOT NULL, " +
+                                 "deadline date NOT NULL, " +
+                                 "grade INT NOT NULL," +
+                                 "PRIMARY KEY(assignID)," +
+                                 "FOREIGN KEY(paperID) REFERENCES tblPapers(paperID))";
 
             executeNonQuery(createTable);
         }
