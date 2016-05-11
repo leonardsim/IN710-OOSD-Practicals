@@ -32,6 +32,15 @@ namespace ADOdatabase
             bitdevConnection.Open();
         }
 
+        // Used to execute non-query (Normally used for INSERT, UPDATE, DELETE, CREATE, and SET statement)
+        private void executeNonQuery(string query)
+        {
+            SqlCommand nonQuery = new SqlCommand(query, bitdevConnection);
+
+            // Returns the number of rows affected by the statement
+            nonQuery.ExecuteNonQuery();
+        }
+
 
     }
 }
