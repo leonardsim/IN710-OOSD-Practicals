@@ -124,5 +124,36 @@ namespace ADOdatabase
             string insertQuery = "INSERT INTO tblAssignments VALUES('" + paperID + "','" + assignTopic + "','" + date + "','" + grade + "');";
             executeNonQuery(insertQuery);
         }
+
+        // Seed the values
+        private void seedTutors()
+        {
+            insertTutorValue("Patricia", "Haden", "phaden@op.ac.nz");
+            insertTutorValue("Danny", "DeVito", "ddevito@op.ac.nz");
+            insertTutorValue("John", "Doe", "djohn@op.ac.nz");
+        }
+
+        private void seedPapers()
+        {
+            insertPaperValue(1, "Object Oriented Systems Development");
+            insertPaperValue(1, "Mobile Development");
+            insertPaperValue(2, "Secrets to Garbage Disposal");
+            insertPaperValue(3, "Discover Who You Are");
+        }
+
+        private void seedAssignments()
+        {
+            insertAssignmentValue(1, "Gray Scott Simulator", "20160205", 68);
+            insertAssignmentValue(2, "Create An Idle Game", "20163005", 0);
+            insertAssignmentValue(3, "Digestion Of Trash", "20162006", 100);
+            insertAssignmentValue(4, "WHO?!", "20162006", 100);
+        }
+
+        private void seedAllTables()
+        {
+            seedTutors();
+            seedPapers();
+            seedAssignments();
+        }
     }
 }
