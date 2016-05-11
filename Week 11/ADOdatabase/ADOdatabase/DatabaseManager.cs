@@ -57,7 +57,7 @@ namespace ADOdatabase
                                  "firstName VARCHAR(30) NOT NULL, " +
                                  "lastName VARCHAR(30) NOT NULL, " +
                                  "email VARCHAR(100) NOT NULL, " +
-                                 "PRIMARY KEY(tutID))";
+                                 "PRIMARY KEY(tutID));";
 
             executeNonQuery(createTable);
         }
@@ -70,7 +70,7 @@ namespace ADOdatabase
                                  "tutID INT NOT NULL, " +
                                  "paperName VARCHAR(50) NOT NULL, " +
                                  "PRIMARY KEY(tutID)," + 
-                                 "FOREIGN KEY(lecID) REFERENCES tblTutors(tutID))";
+                                 "FOREIGN KEY(lecID) REFERENCES tblTutors(tutID));";
 
             executeNonQuery(createTable);
         }
@@ -85,7 +85,7 @@ namespace ADOdatabase
                                  "deadline date NOT NULL, " +
                                  "grade INT NOT NULL," +
                                  "PRIMARY KEY(assignID)," +
-                                 "FOREIGN KEY(paperID) REFERENCES tblPapers(paperID))";
+                                 "FOREIGN KEY(paperID) REFERENCES tblPapers(paperID));";
 
             executeNonQuery(createTable);
         }
@@ -102,6 +102,27 @@ namespace ADOdatabase
             createTutorTable();
             createPapersTable();
             createAssignmentsTable();
+        }
+
+        // Insert values for Tutor
+        private void insertTutorValue(string firstName, string lastName, string email)
+        {
+            string insertQuery = "INSERT INTO tblTutors VALUES('" + firstName + "','" + lastName + "','" + email + "');";
+            executeNonQuery(insertQuery);
+        }
+
+        // Insert values for Paper
+        private void insertPaperValue(int tutID, string paperName)
+        {
+            string insertQuery = "INSERT INTO tblPapers VALUES('" + tutID + "','" + paperName + "');";
+            executeNonQuery(insertQuery);
+        }
+
+        // Insert values for Assignment
+        private void insertAssignmentValue(int paperID, string assignTopic, string date, int grade)
+        {
+            string insertQuery = "INSERT INTO tblAssignments VALUES('" + paperID + "','" + assignTopic + "','" + date + "','" + grade + "');";
+            executeNonQuery(insertQuery);
         }
     }
 }
