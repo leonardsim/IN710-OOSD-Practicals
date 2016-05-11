@@ -33,6 +33,7 @@ namespace ADOdatabase
         }
 
         // Used to execute non-query (Normally used for INSERT, UPDATE, DELETE, CREATE, and SET statement)
+        // Runs a command, or a stored procedure, that affects the state of the specified table
         private void executeNonQuery(string query)
         {
             SqlCommand nonQuery = new SqlCommand(query, bitdevConnection);
@@ -41,12 +42,24 @@ namespace ADOdatabase
             nonQuery.ExecuteNonQuery();
         }
 
+        // Will drop an existing table in the database
         private void dropExistingTables(string table)
         {
             String dropTable = "IF OBJECT_ID('" + table + "') IS NOT NULL DROP TABLE " + table + ";";
             executeNonQuery(dropTable);
         }
 
+        // Creates a tutor table
+        private void createTutorTable()
+        {
+            string createTable = "CREATE TABLE tblTutors (" +
+                                 "tutID INT IDENTITY, " +
+                                 "firstName VARCHAR(30), " +
+                                 "lastName VARCHAR(30), " +
+                                 "email VARCHAR(100), " +
+                                 "CONSTRAINT PK_tblTutors PRIMARY KEY(tutID))";
 
+            executeNonQuery(createTable);
+        }
     }
 }
