@@ -89,5 +89,19 @@ namespace ADOdatabase
 
             executeNonQuery(createTable);
         }
+
+        // Creates all the tables
+        private void createAllTables()
+        {
+            // Drop any existing tables first
+            dropExistingTables("tblTutors");
+            dropExistingTables("tblPapers");
+            dropExistingTables("tblAssignments");
+
+            // Create the necessary tables for the database
+            createTutorTable();
+            createPapersTable();
+            createAssignmentsTable();
+        }
     }
 }
