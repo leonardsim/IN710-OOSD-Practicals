@@ -94,6 +94,7 @@ namespace ADOdatabase
         private void createAllTables()
         {
             // Drop any existing tables first
+            // NOTE: ALWAYS DROP THE TABLES WITH FOREIGN KEYS FIRST
             dropExistingTables("tblAssignments");
             dropExistingTables("tblPapers");
             dropExistingTables("tblTutors");
