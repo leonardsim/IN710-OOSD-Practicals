@@ -16,5 +16,10 @@ namespace ADOdatabase
         {
             InitializeComponent();
         }
+
+        private void btnDB_Click(object sender, EventArgs e)
+        {
+            DatabaseManager dm = new DatabaseManager();
+        }
     }
 }

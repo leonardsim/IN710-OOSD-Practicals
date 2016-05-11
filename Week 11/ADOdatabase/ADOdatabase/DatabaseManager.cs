@@ -15,7 +15,7 @@ namespace ADOdatabase
         //Constructor
         public DatabaseManager()
         {
-
+            populateDatabase();
         }
 
         // Methods
@@ -25,7 +25,7 @@ namespace ADOdatabase
             bitdevConnection = new SqlConnection();
 
             bitdevConnection.ConnectionString = "Data Source = bitdev.ict.op.ac.nz;" +
-                                                "Initital Catalog = IN700001_201601_SIMLE1;" +
+                                                "Initial Catalog = IN700001_201601_SIMLE1;" +
                                                 "User ID = simle1;" +
                                                 "Password = " + UserInfo.PASS + ";";
 
@@ -69,8 +69,8 @@ namespace ADOdatabase
                                  "paperID INT IDENTITY, " +
                                  "tutID INT NOT NULL, " +
                                  "paperName VARCHAR(50) NOT NULL, " +
-                                 "PRIMARY KEY(tutID)," + 
-                                 "FOREIGN KEY(lecID) REFERENCES tblTutors(tutID));";
+                                 "PRIMARY KEY(paperID)," + 
+                                 "FOREIGN KEY(tutID) REFERENCES tblTutors(tutID));";
 
             executeNonQuery(createTable);
         }
@@ -94,9 +94,9 @@ namespace ADOdatabase
         private void createAllTables()
         {
             // Drop any existing tables first
-            dropExistingTables("tblTutors");
-            dropExistingTables("tblPapers");
             dropExistingTables("tblAssignments");
+            dropExistingTables("tblPapers");
+            dropExistingTables("tblTutors");
 
             // Create the necessary tables for the database
             createTutorTable();
@@ -143,10 +143,10 @@ namespace ADOdatabase
 
         private void seedAssignments()
         {
-            insertAssignmentValue(1, "Gray Scott Simulator", "20160205", 68);
-            insertAssignmentValue(2, "Create An Idle Game", "20163005", 0);
-            insertAssignmentValue(3, "Digestion Of Trash", "20162006", 100);
-            insertAssignmentValue(4, "WHO?!", "20162006", 100);
+            insertAssignmentValue(1, "Gray Scott Simulator", "20160502", 68);
+            insertAssignmentValue(2, "Create An Idle Game", "20160530", 0);
+            insertAssignmentValue(3, "Digestion Of Trash", "20160620", 100);
+            insertAssignmentValue(4, "WHO?!", "20160620", 100);
         }
 
         private void seedAllTables()
@@ -154,6 +154,18 @@ namespace ADOdatabase
             seedTutors();
             seedPapers();
             seedAssignments();
+        }
+
+        // Populate the database
+        private void populateDatabase()
+        {
+            connectToDatabase();
+
+            createAllTables();
+
+            seedAllTables();
+
+            bitdevConnection.Close();
         }
     }
 }
