@@ -84,6 +84,7 @@ namespace ADOdatabase
                                  "assignTopic VARCHAR(100) NOT NULL, " +
                                  "deadline date NOT NULL, " +
                                  "grade INT NOT NULL," +
+                                 "completed TINYINT NOT NULL," + // 1 for completed assignments and 0 for non-completed
                                  "PRIMARY KEY(assignID)," +
                                  "FOREIGN KEY(paperID) REFERENCES tblPapers(paperID));";
 
@@ -120,9 +121,9 @@ namespace ADOdatabase
         }
 
         // Insert values for Assignment
-        private void insertAssignmentValue(int paperID, string assignTopic, string date, int grade)
+        private void insertAssignmentValue(int paperID, string assignTopic, string date, int grade, int completed)
         {
-            string insertQuery = "INSERT INTO tblAssignments VALUES('" + paperID + "','" + assignTopic + "','" + date + "','" + grade + "');";
+            string insertQuery = "INSERT INTO tblAssignments VALUES('" + paperID + "','" + assignTopic + "','" + date + "','" + grade + "','" + completed + "');";
             executeNonQuery(insertQuery);
         }
 
@@ -144,10 +145,12 @@ namespace ADOdatabase
 
         private void seedAssignments()
         {
-            insertAssignmentValue(1, "Gray Scott Simulator", "20160502", 68);
-            insertAssignmentValue(2, "Create An Idle Game", "20160530", 0);
-            insertAssignmentValue(3, "Digestion Of Trash", "20160620", 100);
-            insertAssignmentValue(4, "WHO?!", "20160620", 100);
+            insertAssignmentValue(1, "Gray Scott Simulator", "20160502", 68 , 1);
+            insertAssignmentValue(2, "Create An Idle Game", "20160525", 0, 0);
+            insertAssignmentValue(3, "Digestion Of Trash", "20160502", 100, 1);
+            insertAssignmentValue(4, "WHO?!", "20160502", 80, 1);
+            insertAssignmentValue(3, "Become The Trashman", "20160525", 0, 0);
+            insertAssignmentValue(3, "Herculian Training", "20160525", 0, 0);
         }
 
         private void seedAllTables()
