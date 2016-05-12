@@ -54,5 +54,12 @@ namespace ADOdatabase
             bitdevConnection.Close();
         }
 
+        public void ListAllPaperTutorDetails(DataGridView dv)
+        {
+            string selectQuery = "SELECT tblPapers.paperName, tblTutors.firstName, tblTutors.lastName, tblTutors.email " +
+                                 "FROM tblPapers JOIN tblTutors ON tblPapers.tutID = tblTutors.tutID;";
+
+            outputQuery(dv, selectQuery);
+        }
     }
 }
