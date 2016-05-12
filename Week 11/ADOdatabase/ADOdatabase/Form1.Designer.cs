@@ -51,6 +51,7 @@
             this.btnDetails.TabIndex = 1;
             this.btnDetails.Text = "Papers With Tutor Details";
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnDue
             // 
@@ -60,6 +61,7 @@
             this.btnDue.TabIndex = 2;
             this.btnDue.Text = "Assignments Due In 2 Weeks";
             this.btnDue.UseVisualStyleBackColor = true;
+            this.btnDue.Click += new System.EventHandler(this.btnDue_Click);
             // 
             // btnAvg
             // 
@@ -69,6 +71,7 @@
             this.btnAvg.TabIndex = 3;
             this.btnAvg.Text = "Average Marks";
             this.btnAvg.UseVisualStyleBackColor = true;
+            this.btnAvg.Click += new System.EventHandler(this.btnAvg_Click);
             // 
             // Form1
             // 

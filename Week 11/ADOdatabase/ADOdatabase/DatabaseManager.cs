@@ -45,6 +45,7 @@ namespace ADOdatabase
             SqlDataReader selectReader;
             selectReader = selectCommand.ExecuteReader(); // Functions like a stream reader (reads record one at a time)
 
+            // Bind the DataGridView to the BindingSource  and load the data from the reader
             BindingSource bs = new BindingSource();
             bs.DataSource = selectReader;
             dv.DataSource = bs;
@@ -76,8 +77,20 @@ namespace ADOdatabase
             string twoWeeksFromNow = addTwoWeeks.ToString(format);
 
 
-            String selectQuery = "SELECT tblAssignments.assignTopic, tblAssignments.deadline " +
+            String selectQuery = "SELECT assignTopic, deadline " +
                                  "FROM tblAssignments WHERE deadline BETWEEN '" + today + "' AND '" + twoWeeksFromNow + "';";
+
+            outputQuery(dv, selectQuery);
+        }
+
+        public void ListAverageMarkForCompletedAssignments(DataGridView dv)
+        {
+            // Had a multi-part identifier issue
+            // (The multi-part identifier "tblPapers.paperName" could not be bound)
+            // 
+            string selectQuery = "SELECT tblPapers.paperName, AVG(tblAssignments.grade) AS averageMark " +
+                                 "FROM tblPapers JOIN tblAssignments ON tblPapers.paperID = tblAssignments.paperID " +
+                                 "WHERE tblAssignments.completed = 1 GROUP BY paperName;";
 
             outputQuery(dv, selectQuery);
         }

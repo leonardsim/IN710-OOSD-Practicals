@@ -149,6 +149,7 @@ namespace ADOdatabase
             insertAssignmentValue(2, "Create An Idle Game", "20160525", 0, 0);
             insertAssignmentValue(3, "Digestion Of Trash", "20160502", 100, 1);
             insertAssignmentValue(4, "WHO?!", "20160502", 80, 1);
+            insertAssignmentValue(4, "WHO?!", "20160502", 80, 1);
             insertAssignmentValue(3, "Become The Trashman", "20160525", 0, 0);
             insertAssignmentValue(3, "Herculian Training", "20160525", 0, 0);
         }
