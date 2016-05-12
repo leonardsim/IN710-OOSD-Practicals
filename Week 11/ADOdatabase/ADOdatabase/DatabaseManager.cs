@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ADOdatabase
 {
@@ -15,7 +16,6 @@ namespace ADOdatabase
         //Constructor
         public DatabaseManager()
         {
-            populateDatabase();
         }
 
         // Methods
@@ -31,5 +31,28 @@ namespace ADOdatabase
 
             bitdevConnection.Open();
         }
+
+        private void outputQuery(DataGridView dv, String selectQuery)
+        {
+            // Connect to the database 
+            connectToDatabase();
+
+            // Load the statement to the command
+            SqlCommand selectCommand = new SqlCommand();
+            selectCommand.Connection = bitdevConnection; // Connects the command to the database
+            selectCommand.CommandText = selectQuery; // Holds the select query
+
+            SqlDataReader selectReader;
+            selectReader = selectCommand.ExecuteReader(); // Functions like a stream reader (reads record one at a time)
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = selectReader;
+            dv.DataSource = bs;
+
+            // Close it when done with query
+            selectReader.Close();
+            bitdevConnection.Close();
+        }
+
     }
 }
