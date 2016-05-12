@@ -61,5 +61,25 @@ namespace ADOdatabase
 
             outputQuery(dv, selectQuery);
         }
+
+        public void ListDueDateAssignments(DataGridView dv)
+        {
+            // Get today's date time and get the date time for two weeks from now
+            DateTime time = DateTime.Now;
+            DateTime addTwoWeeks = time.AddDays(14);
+
+            // Format string for DateTime
+            string format = "yyyy-MM-dd";
+
+            // Format the date time for today and twoWeeksFromNow
+            string today = time.ToString(format);
+            string twoWeeksFromNow = addTwoWeeks.ToString(format);
+
+
+            String selectQuery = "SELECT tblAssignments.assignTopic, tblAssignments.deadline " +
+                                 "FROM tblAssignments WHERE deadline BETWEEN '" + today + "' AND '" + twoWeeksFromNow + "';";
+
+            outputQuery(dv, selectQuery);
+        }
     }
 }
