@@ -137,7 +137,7 @@ namespace ADOdatabase
 
         private void seedPapers()
         {
-            insertPaperValue(1, "Object Oriented Systems Development");
+            insertPaperValue(1, "Object Oriented Software Development");
             insertPaperValue(1, "Mobile Development");
             insertPaperValue(2, "Secrets to Garbage Disposal");
             insertPaperValue(3, "Discover Who You Are");
