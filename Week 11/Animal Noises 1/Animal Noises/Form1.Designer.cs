@@ -30,6 +30,7 @@
         {
             this.btnSpeak = new System.Windows.Forms.Button();
             this.btnWhat = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSpeak
@@ -52,16 +53,26 @@
             this.btnWhat.UseVisualStyleBackColor = true;
             this.btnWhat.Click += new System.EventHandler(this.btnWhat_Click);
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(49, 234);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(157, 43);
+            this.btnStop.TabIndex = 2;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(253, 234);
+            this.ClientSize = new System.Drawing.Size(253, 306);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnWhat);
             this.Controls.Add(this.btnSpeak);
             this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -73,6 +84,7 @@
 
         private System.Windows.Forms.Button btnSpeak;
         private System.Windows.Forms.Button btnWhat;
+        private System.Windows.Forms.Button btnStop;
 
     }
 }
