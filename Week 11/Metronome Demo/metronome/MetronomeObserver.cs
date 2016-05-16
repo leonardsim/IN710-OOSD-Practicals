@@ -54,6 +54,7 @@ namespace metronome
     public class Counter : MetronomeObserver
     {
         private NumericUpDown spinBox;
+        private delegate void spinDelegate();
 
         public Counter(Metronome metronome, NumericUpDown spinBox)
             : base(metronome)
@@ -61,9 +62,32 @@ namespace metronome
             this.spinBox = spinBox;
         }
 
+        // Passed into the delegate
+        private void incrementSpinVal()
+        {
+            spinBox.Value++;  
+        }
+
+
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
-                spinBox.Value++;  
+            // InvokeRequired gets a value indicating whether the caller must call an invoke
+            // method when making method calls to the control because the caller is on a different
+            // thread than the one the control was created on
+            // Returns true, if the control's handle was created on a different thread than the 
+            // calling thread
+            if(spinBox.InvokeRequired)
+            {
+                spinDelegate sd = new spinDelegate(incrementSpinVal);
+
+                // Invoke method executes the specified delegate on the thread that owns the
+                // control's underlying window handle
+                spinBox.Invoke(sd);
+            }
+            else
+            {
+                incrementSpinVal();
+            }
         }
     } // end TCounter
 
@@ -72,6 +96,7 @@ namespace metronome
     public class TimeDisplay : MetronomeObserver
     {
         private ListBox listBox;
+        private delegate void listboxDelegate(DateTime time);
 
         public TimeDisplay(Metronome metronome, ListBox listBox)
             : base(metronome)
@@ -79,10 +104,27 @@ namespace metronome
             this.listBox = listBox;
         }
 
+        private void updateTimeString(DateTime t)
+        {
+            listBox.Items.Add(t.ToString());
+        }
+
+
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
-            DateTime currDateTime = e.currentTime;
-            listBox.Items.Add(currDateTime.ToString());         
+            if (listBox.InvokeRequired)
+            {
+                listboxDelegate ld = new listboxDelegate(updateTimeString);
+                listBox.Invoke(ld, e.currentTime);
+            }
+            else
+            {
+                updateTimeString(e.currentTime);
+            }
+
+
+            /*DateTime currDateTime = e.currentTime;
+            listBox.Items.Add(currDateTime.ToString());*/   
         }
     }
 
