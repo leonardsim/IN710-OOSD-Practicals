@@ -37,7 +37,15 @@ namespace metronome
         {
            int currInterval = Convert.ToInt16(textBox1.Text);
            mainMetronome.Interval = currInterval;
-           mainMetronome.start();
+
+           // Create ThreadStart
+           ThreadStart ts = new ThreadStart(mainMetronome.start);
+           Thread t = new Thread(ts);
+
+           // Start the thread
+           t.Start();
+
+           //mainMetronome.start();
         }
 
         public void clearBuffer()
