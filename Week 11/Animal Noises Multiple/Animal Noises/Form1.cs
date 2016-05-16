@@ -22,6 +22,7 @@ namespace Animal_Noises
 
         // Something to be shared across all thread 
         // and will be used to lock
+        // lock can only take in objects
         private object lockOb;
 
         private void Form1_Load(object sender, EventArgs e)
