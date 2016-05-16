@@ -18,6 +18,7 @@ namespace metronome
         private Beeper mainBeeper;
         private Counter mainCounter;
         private TimeDisplay mainTimeDisplay;
+        private Thread t;
 
 
         public Form1()
@@ -40,7 +41,7 @@ namespace metronome
 
            // Create ThreadStart
            ThreadStart ts = new ThreadStart(mainMetronome.start);
-           Thread t = new Thread(ts);
+           t = new Thread(ts);
 
            // Start the thread
            t.Start();
@@ -55,7 +56,7 @@ namespace metronome
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Code needed here to stop the metronome
+            t.Abort();
         }
 
     }
