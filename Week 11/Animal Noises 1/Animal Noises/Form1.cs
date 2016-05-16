@@ -41,6 +41,12 @@ namespace Animal_Noises
             MessageBox.Show("It is a frog");
         }
 
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            // Kills the thread
+            t.Abort();
+        }
+
 
     }
 }
