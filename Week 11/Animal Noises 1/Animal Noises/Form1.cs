@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Animal_Noises
@@ -17,15 +18,22 @@ namespace Animal_Noises
         }
 
         private Animal mainAnimal;
+        private Thread t;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             mainAnimal = new Animal();
+
+            // Create ThreadStart and feed in the speak method
+            ThreadStart ts = new ThreadStart(mainAnimal.speak);
+
+            t = new Thread(ts);
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
-            mainAnimal.speak();
+            // Start the thread
+            t.Start();
         }
 
         private void btnWhat_Click(object sender, EventArgs e)
