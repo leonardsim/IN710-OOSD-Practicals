@@ -11,18 +11,23 @@ namespace Animal_Noises
     {
         private SoundPlayer soundPlayer;
         private String soundFileName;
+        private object lockOb;
 
-        public Animal(String soundFileName)
+        public Animal(String soundFileName, object lockOb)
         {
             soundPlayer = new SoundPlayer(soundFileName);
+            this.lockOb = lockOb;
         }
 
         public void speak()
         {
             while (true)
             {
+                lock (lockOb)
+                {
                     soundPlayer.Play();
                     Thread.Sleep(500);
+                }
             }
         }
 
