@@ -18,11 +18,8 @@ namespace UpcomingHolidays.Controllers
 
         public ActionResult DaysToHoliday()
         {
-            // Variables
-            DateTime now = DateTime.Now;
-
-            // Create a default object
-            Holiday defaultHoliday = new Holiday("Queen's Birthday", new DateTime(2016, 6, 6), "/Images/queen.jpg");
+            // Create a default instance of Holiday
+            Holiday defaultHoliday = new Holiday("?????", new DateTime(2016, 6, 6), "/Images/queen.jpg");
 
             // Generate random numbers
             Random rand = new Random();
@@ -41,7 +38,14 @@ namespace UpcomingHolidays.Controllers
                     break;
             }
 
-            return View();
+            // Calculate the number of days to the next holiday and set the Holiday's NumDaysToHoliday property to that value
+            DateTime now = DateTime.Now;
+            TimeSpan ts = defaultHoliday.HolidayDate - now;
+            int totalDays = Math.Abs(ts.Days);
+
+            defaultHoliday.NumDaysToHoliday = totalDays;
+
+            return View(defaultHoliday);
         }
     }
 }
