@@ -10,9 +10,64 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>DisplayIdealDog</title>
+    <style>
+        img{
+            float: left;
+            padding: 10px;
+            width: 20%;
+            height: 20%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
     <div> 
+        <h2>Our Recommendation:</h2>
+        <h3>We suggest the @Model.DisplayName</h3>
+
+        <img src="~/Content/Dog Images/@Model.ImageName" />
+
+        <table>
+            <tr>
+                <th>Activity Level</th>
+                <td>@Model.ActivityLevel</td>
+            </tr>
+            <tr>
+                <th>Shedding Level</th>
+                <td>@Model.SheddingLevel</td>
+            </tr>
+            <tr>
+                <th>Grooming Level</th>
+                <td>@Model.GroomingLevel </td>
+            </tr>
+            <tr>
+                <th>Intelligence Level</th>
+                <td>@Model.IntelligenceLevel </td>
+            </tr>
+            <tr>
+                <th>Good With Children</th>
+                <td>@Model.GoodWithChildren</td>
+            </tr>
+            <tr>
+                <th>Drools</th>
+                <td>@Model.Drools</td>
+            </tr>
+            <tr>
+                <th>Coat Length</th>
+                <td>@Model.Coatlength</td>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <td>@Model.Size</td>
+            </tr>
+        </table>
+
+        <a href="~/DogSelect/DogSelector">Go Back To Form</a>
     </div>
 </body>
 </html>
