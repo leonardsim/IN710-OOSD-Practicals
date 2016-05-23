@@ -120,6 +120,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\DogSelect\DogSelector.cshtml" />
+    <Content Include="Views\DogSelect\DisplayIdealDog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
