@@ -25,8 +25,11 @@ namespace DogSelector.Controllers
         }
 
         [HttpPost]
-        public ActionResult DisplayDog()
+        public ActionResult DisplayDog(Dog prefDog)
         {
+            // Populate the dog list
+            dogList = makeDatabase();
+
             return View();
         }
 
@@ -279,6 +282,8 @@ namespace DogSelector.Controllers
 
             return newDatabase;
         }
+
+        private int calculate
 
     }
 }
