@@ -29,12 +29,15 @@ namespace DogSelector.Controllers
         }
 
         [HttpPost]
-        public ActionResult DisplayDog(Dog prefDog)
+        public ActionResult DogSelector(Dog prefDog)
         {
             // Populate the dog list
             dogList = makeDatabase();
 
-            return View();
+            // Obtain the idealDog
+            Dog idealDog = obtainUserIdealDog(prefDog, dogList);
+
+            return View("DisplayIdealDog", idealDog);
         }
 
         // Methods

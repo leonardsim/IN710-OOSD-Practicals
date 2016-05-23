@@ -10,9 +10,91 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>DogSelector</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
     <div> 
-    </div>
+        <h3>Welcome to the IN710 Dog Selector</h3>
+        <h3>We'll help you pick the Ideal Dog</h3>
+        <form action="DogSelector" method="post">
+            <fieldset>
+                <legend>Preferences</legend>
+
+                Must be good with children:<br />
+                <input type="radio" name="GoodWithChildren" value="true" checked /> Yes <br />
+                <input type="radio" name="GoodWithChildren" value="false" /> No <br /><br />
+
+                Drools:<br />
+                <input type="radio" name="Drools" value="true" checked /> Yes <br />
+                <input type="radio" name="Drools" value="false" /> No <br /><br />
+
+                Coat Length:<br />
+                <input type="radio" name="Coatlength" value="Short" checked /> Short <br />
+                <input type="radio" name="Coatlength" value="Medium" /> Medium <br />
+                <input type="radio" name="Coatlength" value="Long" /> Long <br /><br />
+
+                <table>
+                    <!--Table headers-->
+                    <tr>
+                        <th></th>
+                        <th>Low</th>
+                        <th>Medium</th>
+                        <th>High</th>
+                        <th>No Preference</th>
+                    </tr>
+
+                    <tr>
+                        <th>Activity Level</th>
+                        <td><input type="radio" name="ActivityLevel" value="Low" checked /></td>
+                        <td><input type="radio" name="ActivityLevel" value="Medium" /></td>
+                        <td><input type="radio" name="ActivityLevel" value="High" /></td>
+                        <td><input type="radio" name="ActivityLevel" value="NoPref" /></td>
+                    </tr>
+
+                    <tr>
+                        <th>Shedding Level</th>
+                        <td><input type="radio" name="SheddingLevel" value="Low" checked /></td>
+                        <td><input type="radio" name="SheddingLevel" value="Medium" /></td>
+                        <td><input type="radio" name="SheddingLevel" value="High" /></td>
+                        <td><input type="radio" name="SheddingLevel" value="NoPref" /></td>
+                    </tr>
+
+                    <tr>
+                        <th>Grooming Level</th>
+                        <td><input type="radio" name="GroomingLevel" value="Low" checked /></td>
+                        <td><input type="radio" name="GroomingLevel" value="Medium" /></td>
+                        <td><input type="radio" name="GroomingLevel" value="High" /></td>
+                        <td><input type="radio" name="GroomingLevel" value="NoPref" /></td>
+                    </tr>
+
+                    <tr>
+                        <th>Intelligence Level</th>
+                        <td><input type="radio" name="IntelligenceLevel" value="Low" checked /></td>
+                        <td><input type="radio" name="IntelligenceLevel" value="Medium" /></td>
+                        <td><input type="radio" name="IntelligenceLevel" value="High" /></td>
+                        <td><input type="radio" name="IntelligenceLevel" value="NoPref" /></td>
+                    </tr>
+                </table><br />
+
+                Preferred Size:<br />
+                <select name="Size">
+                    <option value="Miniature">Miniature</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="Giant">Giant</option>
+                </select><br /></br>
+
+                <input type="submit" value="Find My Dog!" />
+            </fieldset>
+        </form>   
+     </div>
 </body>
 </html>
