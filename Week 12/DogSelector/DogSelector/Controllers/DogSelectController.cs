@@ -288,9 +288,9 @@ namespace DogSelector.Controllers
         }
 
 
-        private int calculateBool(bool perfDog, bool dogFromList)
+        private int calculateBool(bool prefDog, bool dogFromList)
         {
-            if (perfDog == dogFromList)
+            if (prefDog == dogFromList)
             {
                 return MATCH_SCORE; // Returns full score if they are equal
             }
@@ -298,27 +298,59 @@ namespace DogSelector.Controllers
             return 0; // Returns 0 if they don't match 
         }
 
-        private int calculateEnum(int perfDog, int dogFromList)
+        private int calculateEnum(int prefDog, int dogFromList)
         {
             // Returns max score if they match
-            if (perfDog == dogFromList)
+            if (prefDog == dogFromList)
             {
                 return MATCH_SCORE;
             }
 
             // Returns 1 if they are close
-            if ((perfDog == dogFromList + 1) || (perfDog == dogFromList - 1))
+            if ((prefDog == dogFromList + 1) || (prefDog == dogFromList - 1))
             {
                 return CLOSE_MATCH_SCORE;
             }
 
             // If the enum selected is 'NoPref' then return the max score
-            if (perfDog == 3)
+            if (prefDog == 3)
             {
                 return MATCH_SCORE;
             }
 
             return 0; // Returns 0 if they don't match 
+        }
+
+        private Dog obtainUserIdealDog(Dog prefDog, List<Dog> ld)
+        {
+            // Create a score array to keep track of all the dog's score in the list
+            int[] score = new int[ld.Count];
+            int dogIndex = 0;
+            
+            // Loop through the list and calculate the score of each dog in the list
+            foreach (Dog currentDog in ld)
+            {
+                // Get the score for the boolean values 
+                score[dogIndex] += calculateBool(prefDog.GoodWithChildren, currentDog.GoodWithChildren);
+                score[dogIndex] += calculateBool(prefDog.Drools, currentDog.Drools);
+
+                // Get the score for th enum values
+                score[dogIndex] += calculateEnum((int)prefDog.ActivityLevel, (int)currentDog.ActivityLevel);
+                score[dogIndex] += calculateEnum((int)prefDog.SheddingLevel, (int)currentDog.SheddingLevel);
+                score[dogIndex] += calculateEnum((int)prefDog.GroomingLevel, (int)currentDog.GroomingLevel);
+                score[dogIndex] += calculateEnum((int)prefDog.IntelligenceLevel, (int)currentDog.IntelligenceLevel);
+                score[dogIndex] += calculateEnum((int)prefDog.Coatlength, (int)currentDog.Coatlength);
+                score[dogIndex] += calculateEnum((int)prefDog.Size, (int)currentDog.Size);
+
+                // Increment dogIndex
+                dogIndex++;
+            }
+
+            // Obtain the maxScore from score array then get the index
+            int maxScore = score.Max();
+            int maxIndex = score.ToList().IndexOf(maxScore);
+
+            return dogList[maxIndex];
         }
 
     }
