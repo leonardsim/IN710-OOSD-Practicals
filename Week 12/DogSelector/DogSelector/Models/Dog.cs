@@ -11,7 +11,7 @@ namespace DogSelector.Models
         public String BreedName { get; set; }
         public String DisplayName { get; set; }
         public EScale ActivityLevel { get; set; }
-        public ELength CoatLength { get; set; }
+        public ELength Coatlength { get; set; }
         public EScale GroomingLevel { get; set; }
         public EScale IntelligenceLevel { get; set; }
         public EScale SheddingLevel { get; set; }
