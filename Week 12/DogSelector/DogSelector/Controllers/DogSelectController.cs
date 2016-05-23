@@ -298,6 +298,28 @@ namespace DogSelector.Controllers
             return 0; // Returns 0 if they don't match 
         }
 
+        private int calculateEnum(int perfDog, int dogFromList)
+        {
+            // Returns max score if they match
+            if (perfDog == dogFromList)
+            {
+                return MATCH_SCORE;
+            }
+
+            // Returns 1 if they are close
+            if ((perfDog == dogFromList + 1) || (perfDog == dogFromList - 1))
+            {
+                return CLOSE_MATCH_SCORE;
+            }
+
+            // If the enum selected is 'NoPref' then return the max score
+            if (perfDog == 3)
+            {
+                return MATCH_SCORE;
+            }
+
+            return 0; // Returns 0 if they don't match 
+        }
 
     }
 }
