@@ -12,6 +12,10 @@ namespace DogSelector.Controllers
         // Declare list dog
         List<Dog> dogList;
 
+        // Constants
+        private const int MATCH_SCORE = 2;
+        private const int CLOSE_MATCH_SCORE = 1; 
+
         // GET: DogSelect
         public ActionResult Index()
         {
@@ -283,7 +287,17 @@ namespace DogSelector.Controllers
             return newDatabase;
         }
 
-        private int calculate
+
+        private int calculateBool(bool perfDog, bool dogFromList)
+        {
+            if (perfDog == dogFromList)
+            {
+                return MATCH_SCORE; // Returns full score if they are equal
+            }
+
+            return 0; // Returns 0 if they don't match 
+        }
+
 
     }
 }
